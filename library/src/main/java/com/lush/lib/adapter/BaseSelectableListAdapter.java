@@ -1,6 +1,8 @@
 package com.lush.lib.adapter;
 
 import com.lush.lib.listener.OnListItemClickListener;
+import com.lush.view.holder.BaseSelectableViewHolder;
+import com.lush.view.holder.BaseViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
