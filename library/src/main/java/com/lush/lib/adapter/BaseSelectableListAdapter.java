@@ -43,17 +43,25 @@ public abstract class BaseSelectableListAdapter<T> extends BaseListAdapter<T>
 		return selected;
 	}
 
-	public void addSelected(T contact)
+	public void addSelected(T item)
 	{
-		getSelected().add(contact);
-		int position = getPosition(contact);
+		getSelected().add(item);
+		int position = getPosition(item);
 		notifyItemChanged(position);
 	}
 
-	public void removeSelected(T contact)
+	public void removeSelected(T item)
 	{
-		getSelected().remove(contact);
-		int position = getPosition(contact);
+		getSelected().remove(item);
+		int position = getPosition(item);
 		notifyItemChanged(position);
+	}
+
+	public void setSelected(T item)
+	{
+		selected = new ArrayList<>();
+		selected.add(item);
+		int position = getPosition(item);
+		notifyDataSetChanged();
 	}
 }
