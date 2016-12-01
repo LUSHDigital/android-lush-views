@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<style name="Text">
+		<item name="android:textSize">14sp</item>
+	</style>
+
+	<style name="Text.Black">
+		<item name="android:textColor">@android:color/black</item>
+	</style>
+
+	<style name="Text.White">
+		<item name="android:textColor">@android:color/white</item>
+	</style>
+
+	<style name="Text.White.HandwrittenBold">
+		<item name="fontPath">fonts/Lush_Bold.otf</item>
+	</style>
+
+	<style name="Text.White.Handwritten">
+		<item name="fontPath">fonts/Lush_Regular.otf</item>
+	</style>
+
+	<style name="Text.White.HelveticaBold">
+		<item name="fontPath">fonts/HelveticaNeueLTPro-Bd.otf</item>
+	</style>
+
+	<style name="Text.Black.HelveticaBold">
+		<item name="fontPath">fonts/HelveticaNeueLTPro-Bd.otf</item>
+	</style>
+
+	<style name="Text.Black.HandwrittenBold">
+		<item name="fontPath">fonts/Lush_Bold.otf</item>
+	</style>
+
+	<style name="Text.Black.HandwrittenBold.Title">
+		<item name="android:textSize">42sp</item>
+	</style>
+
+	<style name="Text.Black.Handwritten">
+		<item name="fontPath">fonts/Lush_Regular.otf</item>
+	</style>
+
+	<style name="Text.Black.HelveticaBold.SmallTitle">
+		<item name="android:textSize">12sp</item>
+	</style>
+
+</resources>
