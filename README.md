@@ -20,3 +20,22 @@ you will need to add the following code to any Activity:
 ```
 
 and then have the Application singleton extend `LushApplication` (Or just copy the Calligraphy code out of it).
+
+## Buttons
+Buttons come in 4 styles:
+
+### Black Button
+Black button with white text, used on light backgrounds. Accessed by applying `@style/LushButton.Black`
+to any button. Used as a primary action button
+
+### Black Button Inverse
+Transparent button with black border and black text. Accessed by applying `@style/LushButton.BlackSecondary`
+and is a secondary action to a black button primary action.
+
+### White Button
+White button with Black text, used on dark backgrounds. Accessed by applying `@style/LushButton.White`
+to any button. Used as a primary action button
+
+### White Button Inverse
+Transparent button with white border and white text. Accessed by applying `@style/LushButton.WhiteSecondary`
+and is a secondary action to a white button primary action.
