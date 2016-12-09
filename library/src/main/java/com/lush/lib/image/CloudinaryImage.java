@@ -13,6 +13,8 @@ import java.lang.annotation.RetentionPolicy;
  */
 public class CloudinaryImage implements ImageServiceOptions
 {
+	private static final String BASE_URL = "https://res.cloudinary.com/lush/image/upload/";
+
 	@Retention(RetentionPolicy.SOURCE)
 	@StringDef({HEIGHT, WIDTH})
 	public @interface Orientation{}
@@ -26,7 +28,7 @@ public class CloudinaryImage implements ImageServiceOptions
 	public static final int MEDIUM = 300;
 	public static final int LARGE = 400;
 
-	private String imageUrl, orientation;
+	private String id, orientation;
 	private int size;
 
 	public CloudinaryImage()
@@ -38,16 +40,16 @@ public class CloudinaryImage implements ImageServiceOptions
 		this(imageUrl, MEDIUM, WIDTH);
 	}
 
-	public CloudinaryImage(String imageUrl, @Size int size, @Orientation String orientation)
+	public CloudinaryImage(String id, @Size int size, @Orientation String orientation)
 	{
-		this.imageUrl = imageUrl;
+		this.id = id.replace("\\", "");
 		this.size = size;
 		this.orientation = orientation;
 	}
 
 	public String getImageUrl()
 	{
-		return imageUrl;
+		return BASE_URL + id;
 	}
 
 	@Orientation
@@ -65,14 +67,14 @@ public class CloudinaryImage implements ImageServiceOptions
 	@Override
 	public String createUrl()
 	{
-		return "cloudinary://" + imageUrl + ";" + size + ";" + orientation;
+		return "cloudinary://" + id + ";" + size + ";" + orientation;
 	}
 
 	@Override
 	public void fromUrl(String url)
 	{
 		String[] parts = url.split(";");
-		imageUrl = parts[0].substring("cloudinary://".length());
+		id = parts[0].substring("cloudinary://".length());
 		size = Integer.valueOf(parts[1]);
 		orientation = parts[2];
 	}
