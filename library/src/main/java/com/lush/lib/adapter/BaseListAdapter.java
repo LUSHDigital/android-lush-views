@@ -117,6 +117,7 @@ public abstract class BaseListAdapter<T> extends RecyclerView.Adapter<BaseViewHo
 		applyAndAnimateRemovals(items);
 		applyAndAnimateAdditions(items);
 		applyAndAnimateMovedItems(items);
+		notifyItemRangeChanged(0, items.size());
 	}
 
 	private void applyAndAnimateRemovals(List<T> newItems)
