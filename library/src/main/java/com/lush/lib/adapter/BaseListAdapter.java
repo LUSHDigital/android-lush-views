@@ -117,7 +117,10 @@ public abstract class BaseListAdapter<T> extends RecyclerView.Adapter<BaseViewHo
 		applyAndAnimateRemovals(items);
 		applyAndAnimateAdditions(items);
 		applyAndAnimateMovedItems(items);
-		notifyItemRangeChanged(0, items.size());
+		if (items != null)
+		{
+			notifyItemRangeChanged(0, items.size());
+		}
 	}
 
 	private void applyAndAnimateRemovals(List<T> newItems)
@@ -134,25 +137,31 @@ public abstract class BaseListAdapter<T> extends RecyclerView.Adapter<BaseViewHo
 
 	private void applyAndAnimateAdditions(List<T> newItems)
 	{
-		for (int i = 0, count = newItems.size(); i < count; i++)
+		if (newItems != null)
 		{
-			T item = newItems.get(i);
-			if (!getItems().contains(item))
+			for (int i = 0, count = newItems.size(); i < count; i++)
 			{
-				addItem(i, item);
+				T item = newItems.get(i);
+				if (!getItems().contains(item))
+				{
+					addItem(i, item);
+				}
 			}
 		}
 	}
 
 	private void applyAndAnimateMovedItems(List<T> newItems)
 	{
-		for (int toPosition = newItems.size() - 1; toPosition >= 0; toPosition--)
+		if (newItems != null)
 		{
-			T model = newItems.get(toPosition);
-			final int fromPosition = getItems().indexOf(model);
-			if (fromPosition >= 0 && fromPosition != toPosition)
+			for (int toPosition = newItems.size() - 1; toPosition >= 0; toPosition--)
 			{
-				moveItem(fromPosition, toPosition);
+				T model = newItems.get(toPosition);
+				final int fromPosition = getItems().indexOf(model);
+				if (fromPosition >= 0 && fromPosition != toPosition)
+				{
+					moveItem(fromPosition, toPosition);
+				}
 			}
 		}
 	}
