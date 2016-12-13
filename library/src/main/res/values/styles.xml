@@ -57,6 +57,11 @@
 		<item name="android:background">@drawable/state_button_black_secondary</item>
 	</style>
 
+	<style name="LushButton.BlackSecondaryTransparent">
+		<item name="android:textColor">@drawable/state_button_text_black</item>
+		<item name="android:background">@drawable/state_button_black_secondary_transparent</item>
+	</style>
+
 	<style name="LushButton.Black.Round">
 		<item name="android:background">@drawable/state_button_black_round_primary</item>
 	</style>
