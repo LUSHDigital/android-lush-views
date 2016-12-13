@@ -59,9 +59,11 @@ public abstract class BaseSelectableListAdapter<T> extends BaseListAdapter<T>
 
 	public void setSelected(T item)
 	{
-		selected = new ArrayList<>();
-		selected.add(item);
-		int position = getPosition(item);
-		notifyDataSetChanged();
+		List<T> selectedCopy = new ArrayList<>(getSelected());
+		for (T toRemove : selectedCopy)
+		{
+			removeSelected(toRemove);
+		}
+		addSelected(item);
 	}
 }
