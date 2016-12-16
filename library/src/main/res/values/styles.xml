@@ -35,11 +35,12 @@
 	</style>
 
 	<style name="LushButton">
+		<item name="android:layout_width">192dp</item>
+		<item name="android:layout_height">56dp</item>
 		<item name="android:textSize">12sp</item>
 		<item name="android:padding">16dp</item>
 		<item name="android:gravity">center</item>
 		<item name="elevation">0dp</item>
-		<item name="android:minWidth">192dp</item>
 	</style>
 
 	<style name="LushButton.Black">
