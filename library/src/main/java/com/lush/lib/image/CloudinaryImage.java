@@ -42,7 +42,7 @@ public class CloudinaryImage implements ImageServiceOptions
 
 	public CloudinaryImage(String id, @Size int size, @Orientation String orientation)
 	{
-		this.id = id.replace("\\", "");
+		this.id = id != null ? id.replace("\\", "") : "";
 		this.size = size;
 		this.orientation = orientation;
 	}
