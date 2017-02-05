@@ -77,4 +77,8 @@
 		<item name="android:textAppearance">@style/Text.Black</item>
 	</style>
 
+	<style name="WhiteProgressBar" parent="Theme.AppCompat">
+		<item name="colorAccent">@android:color/white</item>
+	</style>
+
 </resources>
