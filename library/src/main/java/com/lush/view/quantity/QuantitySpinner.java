@@ -56,7 +56,7 @@ public class QuantitySpinner extends BaseQuantityView implements AdapterView.OnI
 		{
 			strings[i] = String.valueOf(i + 1);
 		}
-		ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), R.layout.view_spinner_text_item, R.id.text, strings);
+		ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), R.layout.view_spinner_text_item, R.id.name, strings);
 		spinner.setAdapter(adapter);
 	}
 
