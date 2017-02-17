@@ -1,6 +1,7 @@
 package com.lush.lib.handler;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.lush.lib.image.CloudinaryImage;
 import com.nostra13.universalimageloader.core.download.handlers.SchemeHandler;
@@ -15,6 +16,7 @@ import java.io.InputStream;
  */
 public class CloudinarySchemeHandler extends SchemeHandler
 {
+	private static final String TAG = CloudinarySchemeHandler.class.getSimpleName();
 	@Override
 	public InputStream getStreamForPath(Context context, String path, Object optionForDownloader, int connectTimeout, int readTimeout)
 	{
@@ -23,13 +25,18 @@ public class CloudinarySchemeHandler extends SchemeHandler
 		image.fromUrl(path);
 		int actualSize = (int) densityDpi * image.getSize();
 		String[] parts = image.getImageUrl().split("upload/");
-		String actualUrl = parts[0] + "upload/" + image.getOrientation() + "_" + String.valueOf(actualSize) + "/" + parts[1];
 		try
 		{
+			String actualUrl = parts[0] + "upload/" + image.getOrientation() + "_" + String.valueOf(actualSize) + "/" + parts[1];
 			return getStreamFromNetwork(actualUrl, connectTimeout, readTimeout, optionForDownloader);
 		}
 		catch (IOException e)
 		{
+			return null;
+		}
+		catch (ArrayIndexOutOfBoundsException e)
+		{
+			Log.w(TAG, "No ID for cloudinary image. Cannot download image.");
 			return null;
 		}
 	}
