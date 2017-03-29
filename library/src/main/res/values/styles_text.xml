@@ -25,6 +25,14 @@
 		<item name="fontPath">fonts/HelveticaNeueLTPro-Bd.otf</item>
 	</style>
 
+	<style name="Text.White.HandwrittenBold.Title">
+		<item name="android:textSize">42sp</item>
+	</style>
+
+	<style name="Text.White.HelveticaBold.SmallTitle">
+		<item name="android:textSize">12sp</item>
+	</style>
+
 	<style name="Text.Black.HelveticaBold">
 		<item name="fontPath">fonts/HelveticaNeueLTPro-Bd.otf</item>
 	</style>
