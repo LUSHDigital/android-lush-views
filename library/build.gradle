@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 android {
 	compileSdkVersion 25
-	buildToolsVersion "25.0.0"
+	buildToolsVersion "25.0.2"
 	defaultConfig {
 		minSdkVersion 16
 		targetSdkVersion 25
@@ -20,10 +20,10 @@ android {
 
 dependencies {
 	compile fileTree(dir: 'libs', include: ['*.jar'])
-	compile 'com.android.support:appcompat-v7:25.3.0'
+	compile 'com.android.support:appcompat-v7:25.2.0'
 	compile 'uk.co.chrisjenx:calligraphy:2.2.0'
 	compile 'com.github.matt-allen:Android-Universal-Image-Loader:2.1.2'
 	compile 'com.yqritc:android-scalablevideoview:1.0.4'
-	compile 'com.android.support:recyclerview-v7:25.3.0'
-	compile 'com.aurelhubert:ahbottomnavigation:1.3.3'
+	compile 'com.android.support:recyclerview-v7:25.2.0'
+	compile 'com.aurelhubert:ahbottomnavigation:2.0.6'
 }
