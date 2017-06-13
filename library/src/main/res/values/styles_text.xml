@@ -25,6 +25,10 @@
 		<item name="fontPath">fonts/HelveticaNeueLTPro-Bd.otf</item>
 	</style>
 
+	<style name="Text.White.HelveticaRoman">
+		<item name="fontPath">fonts/HelveticaNeueLTPro-Roman.otf</item>
+	</style>
+
 	<style name="Text.White.HandwrittenBold.Title">
 		<item name="android:textSize">42sp</item>
 	</style>
@@ -35,6 +39,10 @@
 
 	<style name="Text.Black.HelveticaBold">
 		<item name="fontPath">fonts/HelveticaNeueLTPro-Bd.otf</item>
+	</style>
+
+	<style name="Text.Black.HelveticaRoman">
+		<item name="fontPath">fonts/HelveticaNeueLTPro-Roman.otf</item>
 	</style>
 
 	<style name="Text.Black.HandwrittenBold">
