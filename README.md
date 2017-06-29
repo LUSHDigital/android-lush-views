@@ -1,4 +1,10 @@
 # LUSH Style Library for Android
+
+| Branch        | Status        |
+| ------------- |:-------------:|
+| `develop`     | [![Build Status](https://www.bitrise.io/app/7ebbada03cba6cd5/status.svg?token=XIhWz0h1_-cavIc4g_5ilg&branch=develop)](https://www.bitrise.io/app/7ebbada03cba6cd5) |
+| `master`      | [![Build Status](https://www.bitrise.io/app/7ebbada03cba6cd5/status.svg?token=XIhWz0h1_-cavIc4g_5ilg&branch=master)](https://www.bitrise.io/app/7ebbada03cba6cd5) |
+
 Apply the LUSH look and feel to any application by applying styles to the views in layout files.
 
 ## Using the theme
