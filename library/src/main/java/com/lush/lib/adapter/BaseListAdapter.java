@@ -188,4 +188,15 @@ public abstract class BaseListAdapter<T> extends RecyclerView.Adapter<BaseViewHo
 			});
 		}
 	}
+
+	@Override
+	public void onViewRecycled(BaseViewHolder<T> holder)
+	{
+		super.onViewRecycled(holder);
+
+		if (holder != null)
+		{
+			holder.recycle();
+		}
+	}
 }
