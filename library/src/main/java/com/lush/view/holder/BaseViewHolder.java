@@ -21,4 +21,13 @@ public abstract class BaseViewHolder<T> extends RecyclerView.ViewHolder
 	{
 		itemView.setOnClickListener(listener);
 	}
+
+	/**
+	 * Override this method to cancel any behaviour you don't want to continue after the view has been recycled
+	 * This is most likely async behaviour
+	 */
+	public void recycle()
+	{
+
+	}
 }
