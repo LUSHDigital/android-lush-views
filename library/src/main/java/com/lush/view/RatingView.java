@@ -48,7 +48,7 @@ public class RatingView extends LinearLayout
 
 	public void setRating(int rating)
 	{
-		if (rating < 5)
+		if (rating > 5)
 		{
 			// Cap the maximum
 			rating = 5;
