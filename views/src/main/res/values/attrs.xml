@@ -1,0 +1,6 @@
+<resources>
+	<declare-styleable name="RatingView">
+		<attr name="fullStarDrawable" format="integer" />
+		<attr name="emptyStarDrawable" format="integer" />
+	</declare-styleable>
+</resources>
