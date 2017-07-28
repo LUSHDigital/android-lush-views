@@ -1,6 +1,8 @@
 package com.lush.view;
 
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -16,42 +18,67 @@ import android.widget.LinearLayout;
 public class RatingView extends LinearLayout
 {
 	private int rating = 0;
+	protected static final  int MAX_RATING = 5;
+	private Drawable fullStarDrawable, emptyStarDrawable;
 
 	public RatingView(Context context)
 	{
 		super(context);
-		initViewGroup();
+		initViewGroup(context, null);
 		updateStars();
 	}
 
 	public RatingView(Context context, AttributeSet attrs)
 	{
 		super(context, attrs);
-		initViewGroup();
+		initViewGroup(context, attrs);
 		updateStars();
 	}
 
 	public RatingView(Context context, AttributeSet attrs, int defStyleAttr)
 	{
 		super(context, attrs, defStyleAttr);
-		initViewGroup();
+		initViewGroup(context, attrs);
 		updateStars();
 	}
 
 	/**
 	 * Setup the ViewGroup to get the desired effect for showing ratings
 	 */
-	private void initViewGroup()
+	private void initViewGroup(Context context, AttributeSet attrs)
 	{
 		setOrientation(HORIZONTAL);
+		if(attrs != null)
+		{
+			TypedArray a = context.getTheme().obtainStyledAttributes(
+					attrs,
+					R.styleable.RatingView,
+					0, 0);
+
+			try
+			{
+				fullStarDrawable = a.getDrawable(R.styleable.RatingView_fullStarDrawable);
+				emptyStarDrawable = a.getDrawable(R.styleable.RatingView_emptyStarDrawable);
+			}
+			finally
+			{
+				a.recycle();
+			}
+		}
+
+		if(emptyStarDrawable == null || fullStarDrawable ==null)
+		{
+			fullStarDrawable = getResources().getDrawable(R.drawable.ic_star_full);
+			emptyStarDrawable = getResources().getDrawable(R.drawable.ic_star_empty);
+		}
 	}
 
 	public void setRating(int rating)
 	{
-		if (rating > 5)
+		if (rating > MAX_RATING)
 		{
 			// Cap the maximum
-			rating = 5;
+			rating = MAX_RATING;
 		}
 		if (rating < 0)
 		{
@@ -76,16 +103,16 @@ public class RatingView extends LinearLayout
 		for (int i = 0; i < rating; i++)
 		{
 			ImageView img = new ImageView(getContext());
-			img.setImageResource(R.drawable.ic_star_full);
+			img.setImageDrawable(fullStarDrawable);
 			addView(img);
 		}
 
-		int remaining = 5 - rating;
+		int remaining = MAX_RATING - rating;
 
 		for (int i = 0; i < remaining; i++)
 		{
 			ImageView img = new ImageView(getContext());
-			img.setImageResource(R.drawable.ic_star_empty);
+			img.setImageDrawable(emptyStarDrawable);
 			addView(img);
 		}
 	}
