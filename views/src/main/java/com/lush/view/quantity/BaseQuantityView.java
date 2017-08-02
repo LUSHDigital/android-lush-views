@@ -113,6 +113,17 @@ public abstract class BaseQuantityView extends FrameLayout
 	}
 
 	/**
+	 * Method to remove existing listeners.
+	 */
+	public void removeAllListeners ()
+	{
+		if (listeners != null)
+		{
+			listeners.clear();
+		}
+	}
+
+	/**
 	 * Trigger any of the listeners registered with View instance.
 	 */
 	protected void updateListeners()
