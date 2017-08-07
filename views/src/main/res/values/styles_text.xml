@@ -61,4 +61,12 @@
 		<item name="android:textSize">12sp</item>
 	</style>
 
+	<style name="Text.Red">
+		<item name="android:textColor">@color/red</item>
+	</style>
+
+	<style name="Text.Red.HelveticaRoman">
+		<item name="fontPath">fonts/HelveticaNeueLTPro-Roman.otf</item>
+	</style>
+
 </resources>
