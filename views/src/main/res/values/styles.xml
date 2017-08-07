@@ -73,7 +73,9 @@
 
 	<style name="LushEditText">
 		<item name="android:background">@drawable/bg_edit_text_border</item>
-		<item name="android:padding">12dp</item>
+		<item name="android:paddingLeft">12dp</item>
+		<item name="android:paddingRight">12dp</item>
+		<item name="android:layout_gravity">center_vertical</item>
 		<item name="android:textAppearance">@style/Text.Black</item>
 	</style>
 
