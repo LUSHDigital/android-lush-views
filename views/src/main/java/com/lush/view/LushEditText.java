@@ -20,12 +20,12 @@ import android.widget.TextView;
 /**
  * Custom edit text class with title and error view. Custom attributes include:
  * <p>
- *     <ul>
- *         <li>editTextHeight</li>
- *         <li>editTextHint</li>
- *         <li>title</li>
- *         <li>inputType</li>
- *     </ul>
+ * <ul>
+ * <li>editTextHeight</li>
+ * <li>editTextHint</li>
+ * <li>title</li>
+ * <li>inputType</li>
+ * </ul>
  * </p>
  *
  * @author Gokhan
@@ -122,22 +122,15 @@ public class LushEditText extends LinearLayout implements TextWatcher
 		RelativeLayout.LayoutParams editTextLayoutParams = (RelativeLayout.LayoutParams) editText.getLayoutParams();
 		editTextLayoutParams.height = (int) height;
 		editText.setLayoutParams(editTextLayoutParams);
-		if (TextUtils.isEmpty(title))
-		{
-			titleView.setVisibility(GONE);
-		}
-		else
-		{
-			titleView.setText(title);
-		}
-		errorView.setVisibility(isErrorVisible? VISIBLE :GONE);
-		redExclamationImage.setVisibility(isErrorVisible? VISIBLE: GONE);
+		setTitle(title);
+		errorView.setVisibility(isErrorVisible ? VISIBLE : GONE);
+		redExclamationImage.setVisibility(isErrorVisible ? VISIBLE : GONE);
 	}
 
 	@Override
 	public void beforeTextChanged(CharSequence s, int start, int count, int after)
 	{
-
+		// Not used
 	}
 
 	@Override
@@ -155,9 +148,14 @@ public class LushEditText extends LinearLayout implements TextWatcher
 	@Override
 	public void afterTextChanged(Editable s)
 	{
-
+		// Not used
 	}
 
+	/**
+	 * Sets the error message.
+	 *
+	 * @param error the error message.
+	 */
 	public void setError(CharSequence error)
 	{
 		isErrorVisible = !TextUtils.isEmpty(error);
@@ -167,23 +165,26 @@ public class LushEditText extends LinearLayout implements TextWatcher
 
 	}
 
+	/**
+	 * Sets the title.
+	 *
+	 * @param title the title
+	 */
 	public void setTitle(CharSequence title)
 	{
-		if (TextUtils.isEmpty(title))
-		{
-			titleView.setVisibility(GONE);
-		}
-		else
-		{
-			titleView.setVisibility(VISIBLE);
-		}
+		titleView.setText(title);
+		titleView.setVisibility(TextUtils.isEmpty(title) ? GONE : VISIBLE);
 	}
 
+	/**
+	 * Gets the EditText content.
+	 *
+	 * @return the EditText content.
+	 */
 	public Editable getText()
 	{
 		return editText.getText();
 	}
-
 
 	@Override
 	public Parcelable onSaveInstanceState()
@@ -205,8 +206,8 @@ public class LushEditText extends LinearLayout implements TextWatcher
 			state = bundle.getParcelable("superState");
 			isManualTextChange = false;
 			errorView.setText(bundle.getString(KEY_ERROR_TEXT));
-			errorView.setVisibility(isErrorVisible? VISIBLE: GONE);
-			redExclamationImage.setVisibility(isErrorVisible? VISIBLE: GONE);
+			errorView.setVisibility(isErrorVisible ? VISIBLE : GONE);
+			redExclamationImage.setVisibility(isErrorVisible ? VISIBLE : GONE);
 		}
 		super.onRestoreInstanceState(state);
 	}
