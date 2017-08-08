@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  android:layout_width="match_parent"
+			  android:layout_height="wrap_content"
+			  android:orientation="vertical">
+
+	<TextView
+		android:id="@+id/lush_edit_text_title"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="4dp"
+		android:textAppearance="@style/Text.Black.HelveticaBold.SmallTitle"/>
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="4dp">
+
+		<EditText
+			android:id="@+id/lush_edit_text"
+			style="@style/LushEditText"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"/>
+
+		<ImageView
+			android:id="@+id/red_exclamation"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentEnd="true"
+			android:layout_alignParentRight="true"
+			android:contentDescription="@string/default_image_content_desc"
+			android:padding="7dp"
+			android:src="@drawable/red_exclamation"
+			/>
+	</RelativeLayout>
+
+	<TextView
+		android:id="@+id/lush_edit_text_error"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:textAppearance="@style/Text.Red.HelveticaRoman"/>
+
+</LinearLayout>

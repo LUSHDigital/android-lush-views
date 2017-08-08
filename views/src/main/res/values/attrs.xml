@@ -3,4 +3,11 @@
 		<attr name="fullStarDrawable" format="integer" />
 		<attr name="emptyStarDrawable" format="integer" />
 	</declare-styleable>
+
+	<declare-styleable name="LushEditText">
+		<attr name="editTextHeight" format="dimension"/>
+		<attr name="editTextHint" format="string"/>
+		<attr name="title" format="string"/>
+		<attr name="android:inputType"/>
+	</declare-styleable>
 </resources>
