@@ -6,11 +6,11 @@ import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -88,7 +88,7 @@ public class LushEditText extends LinearLayout implements TextWatcher
 				height = a.getDimension(R.styleable.LushEditText_editTextHeight, DEFAULT_HEIGHT_DP * Resources.getSystem().getDisplayMetrics().density);
 				hint = a.getString(R.styleable.LushEditText_editTextHint);
 				title = a.getString(R.styleable.LushEditText_title);
-				inputType = a.getInt(R.styleable.LushEditText_android_inputType, EditorInfo.TYPE_TEXT_VARIATION_NORMAL);
+				inputType = a.getInt(R.styleable.LushEditText_android_inputType, InputType.TYPE_CLASS_TEXT);
 
 			}
 			finally
@@ -184,6 +184,16 @@ public class LushEditText extends LinearLayout implements TextWatcher
 	public Editable getText()
 	{
 		return editText.getText();
+	}
+
+	/**
+	 * Sets the EditText content.
+	 *
+	 * @param value the value
+	 */
+	public void setText(CharSequence value)
+	{
+		editText.setText(value);
 	}
 
 	@Override
