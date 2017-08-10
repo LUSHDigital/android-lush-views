@@ -20,7 +20,8 @@
 			android:id="@+id/lush_edit_text"
 			style="@style/LushEditText"
 			android:layout_width="match_parent"
-			android:layout_height="match_parent"/>
+			android:layout_height="match_parent"
+			android:textCursorDrawable="@null"/>
 
 		<ImageView
 			android:id="@+id/red_exclamation"

@@ -68,10 +68,21 @@ public abstract class BaseLushSpinner<T> extends Spinner implements AdapterView.
 		for (int i = 0, count = getItems().size(); i < count; i++)
 		{
 			T item = getItems().get(i);
-			if (item == selection)
+			if(item instanceof String)
 			{
-				setSelection(i);
-				return;
+				if(item.equals(selection))
+				{
+					setSelection(i);
+					return;
+				}
+			}
+			else
+			{
+				if (item == selection)
+				{
+					setSelection(i);
+					return;
+				}
 			}
 		}
 	}
