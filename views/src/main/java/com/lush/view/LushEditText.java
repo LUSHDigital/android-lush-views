@@ -17,6 +17,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.util.Calendar;
+
 /**
  * Custom edit text class with title and error view. Custom attributes include:
  * <p>
@@ -35,6 +37,7 @@ public class LushEditText extends LinearLayout implements TextWatcher
 	private static final float DEFAULT_HEIGHT_DP = 45;
 	private static final String KEY_ERROR_VISIBLE = "KEY_ERROR_VISIBLE";
 	private static final String KEY_ERROR_TEXT = "KEY_ERROR_TEXT";
+	private static final String KEY_EDIT_TEXT_TEXT = "KEY_EDIT_TEXT_TEXT";
 
 	private TextView titleView;
 	private TextView errorView;
@@ -114,6 +117,7 @@ public class LushEditText extends LinearLayout implements TextWatcher
 		exclamationLayoutParams.height = (int) height;
 		exclamationLayoutParams.width = (int) height;
 		redExclamationImage.setLayoutParams(exclamationLayoutParams);
+		editText.setId(Calendar.getInstance().get (Calendar.MILLISECOND));
 		editText.addTextChangedListener(this);
 		editText.setHint(hint);
 		isManualTextChange = false; // setInputType triggers automated text change
@@ -196,6 +200,16 @@ public class LushEditText extends LinearLayout implements TextWatcher
 		editText.setText(value);
 	}
 
+	/**
+	 * Enables or disables the EditText
+	 *
+	 * @param value set true for enabled
+	 */
+	public void setEditTextEnabled (boolean value)
+	{
+		editText.setEnabled(value);
+	}
+
 	@Override
 	public Parcelable onSaveInstanceState()
 	{
@@ -203,6 +217,7 @@ public class LushEditText extends LinearLayout implements TextWatcher
 		bundle.putParcelable("superState", super.onSaveInstanceState());
 		bundle.putBoolean(KEY_ERROR_VISIBLE, isErrorVisible);
 		bundle.putString(KEY_ERROR_TEXT, errorView.getText().toString());
+		bundle.putString(KEY_EDIT_TEXT_TEXT, editText.getText().toString());
 		return bundle;
 	}
 
@@ -212,9 +227,10 @@ public class LushEditText extends LinearLayout implements TextWatcher
 		if (state instanceof Bundle)
 		{
 			Bundle bundle = (Bundle) state;
+			isManualTextChange = false; // Setting this false when the change is not user induced.
+			editText.setText(bundle.getString(KEY_EDIT_TEXT_TEXT));
 			isErrorVisible = bundle.getBoolean(KEY_ERROR_VISIBLE);
 			state = bundle.getParcelable("superState");
-			isManualTextChange = false;
 			errorView.setText(bundle.getString(KEY_ERROR_TEXT));
 			errorView.setVisibility(isErrorVisible ? VISIBLE : GONE);
 			redExclamationImage.setVisibility(isErrorVisible ? VISIBLE : GONE);
