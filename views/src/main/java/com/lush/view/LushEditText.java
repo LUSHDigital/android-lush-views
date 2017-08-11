@@ -172,7 +172,7 @@ public class LushEditText extends LinearLayout implements TextWatcher
 	/**
 	 * Sets the title.
 	 *
-	 * @param title the title
+	 * @param title the title.
 	 */
 	public void setTitle(CharSequence title)
 	{
@@ -193,7 +193,7 @@ public class LushEditText extends LinearLayout implements TextWatcher
 	/**
 	 * Sets the EditText content.
 	 *
-	 * @param value the value
+	 * @param value the value.
 	 */
 	public void setText(CharSequence value)
 	{
@@ -201,13 +201,33 @@ public class LushEditText extends LinearLayout implements TextWatcher
 	}
 
 	/**
-	 * Enables or disables the EditText
+	 * Enables or disables the EditText.
 	 *
-	 * @param value set true for enabled
+	 * @param value set true for enabled.
 	 */
 	public void setEditTextEnabled (boolean value)
 	{
 		editText.setEnabled(value);
+	}
+
+	/**
+	 * Gets hint of the EditText.
+	 *
+	 * @return the hint
+	 */
+	public String getHint()
+	{
+		return hint;
+	}
+
+	/**
+	 * Sets hint of the EditText.
+	 *
+	 * @param hint the hint.
+	 */
+	public void setHint(String hint)
+	{
+		this.hint = hint;
 	}
 
 	@Override
