@@ -51,6 +51,7 @@ public class LushEditText extends LinearLayout implements TextWatcher
 
 	private boolean isErrorVisible;
 	private boolean isManualTextChange;
+	private TextWatcher textWatcher;
 
 	public LushEditText(Context context)
 	{
@@ -117,7 +118,7 @@ public class LushEditText extends LinearLayout implements TextWatcher
 		exclamationLayoutParams.height = (int) height;
 		exclamationLayoutParams.width = (int) height;
 		redExclamationImage.setLayoutParams(exclamationLayoutParams);
-		editText.setId(Calendar.getInstance().get (Calendar.MILLISECOND));
+		editText.setId(Calendar.getInstance().get(Calendar.MILLISECOND));
 		editText.addTextChangedListener(this);
 		editText.setHint(hint);
 		isManualTextChange = false; // setInputType triggers automated text change
@@ -134,7 +135,10 @@ public class LushEditText extends LinearLayout implements TextWatcher
 	@Override
 	public void beforeTextChanged(CharSequence s, int start, int count, int after)
 	{
-		// Not used
+		if (textWatcher != null)
+		{
+			textWatcher.beforeTextChanged(s, start, count, after);
+		}
 	}
 
 	@Override
@@ -147,12 +151,19 @@ public class LushEditText extends LinearLayout implements TextWatcher
 			redExclamationImage.setVisibility(GONE);
 		}
 		isManualTextChange = true;
+		if (textWatcher != null)
+		{
+			textWatcher.onTextChanged(s, start, before, count);
+		}
 	}
 
 	@Override
 	public void afterTextChanged(Editable s)
 	{
-		// Not used
+		if (textWatcher != null)
+		{
+			textWatcher.afterTextChanged(s);
+		}
 	}
 
 	/**
@@ -205,7 +216,7 @@ public class LushEditText extends LinearLayout implements TextWatcher
 	 *
 	 * @param value set true for enabled.
 	 */
-	public void setEditTextEnabled (boolean value)
+	public void setEditTextEnabled(boolean value)
 	{
 		editText.setEnabled(value);
 	}
@@ -256,5 +267,15 @@ public class LushEditText extends LinearLayout implements TextWatcher
 			redExclamationImage.setVisibility(isErrorVisible ? VISIBLE : GONE);
 		}
 		super.onRestoreInstanceState(state);
+	}
+
+	/**
+	 * Sets text watcher
+	 *
+	 * @param textWatcher the text watcher
+	 */
+	public void setTextWatcher(TextWatcher textWatcher)
+	{
+		this.textWatcher = textWatcher;
 	}
 }
