@@ -16,16 +16,18 @@ import com.lush.view.R;
 
 
 /**
- * @author Matt Allen
+ * @author Matt Allen, Gokhan
  */
 public class WebViewSupportFragment extends Fragment
 {
+	private static final String KEY_URL = "key_url";
 	private WebView mWebView;
 	private ViewGroup mLoading;
 
 	private String mUrl;
 
-	@Nullable @Override
+	@Nullable
+	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
 		View view = inflater.inflate(R.layout.fragment_webview, container, false);
@@ -34,10 +36,12 @@ public class WebViewSupportFragment extends Fragment
 		return view;
 	}
 
-	@SuppressLint("SetJavaScriptEnabled") @Override
+	@SuppressLint("SetJavaScriptEnabled")
+	@Override
 	public void onActivityCreated(Bundle savedInstanceState)
 	{
 		super.onActivityCreated(savedInstanceState);
+		mUrl = (savedInstanceState != null ? savedInstanceState.getString(KEY_URL) : mUrl);
 		mWebView.getSettings().setJavaScriptEnabled(true);
 		mWebView.setWebViewClient(new WebViewClient()
 		{
@@ -56,6 +60,13 @@ public class WebViewSupportFragment extends Fragment
 			}
 		});
 		mWebView.loadUrl(mUrl);
+	}
+
+	@Override
+	public void onSaveInstanceState(Bundle outState)
+	{
+		outState.putString(KEY_URL, mUrl);
+		super.onSaveInstanceState(outState);
 	}
 
 	private void setLoading(boolean loading)
