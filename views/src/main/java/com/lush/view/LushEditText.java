@@ -42,7 +42,7 @@ public class LushEditText extends LinearLayout implements TextWatcher
 	private TextView titleView;
 	private TextView errorView;
 	private EditText editText;
-	private ImageView redExclamationImage;
+	private ImageView errorImageView;
 
 	private float height;
 	private String hint;
@@ -108,16 +108,16 @@ public class LushEditText extends LinearLayout implements TextWatcher
 		errorView = (TextView) lushEditTextLayout.findViewById(R.id.lush_edit_text_error);
 		titleView = (TextView) lushEditTextLayout.findViewById(R.id.lush_edit_text_title);
 		editText = (EditText) lushEditTextLayout.findViewById(R.id.lush_edit_text);
-		redExclamationImage = (ImageView) lushEditTextLayout.findViewById(R.id.red_exclamation);
+		errorImageView = (ImageView) lushEditTextLayout.findViewById(R.id.red_exclamation);
 		addView(lushEditTextLayout);
 	}
 
 	private void formatViews(Context context)
 	{
-		RelativeLayout.LayoutParams exclamationLayoutParams = (RelativeLayout.LayoutParams) redExclamationImage.getLayoutParams();
+		RelativeLayout.LayoutParams exclamationLayoutParams = (RelativeLayout.LayoutParams) errorImageView.getLayoutParams();
 		exclamationLayoutParams.height = (int) height;
 		exclamationLayoutParams.width = (int) height;
-		redExclamationImage.setLayoutParams(exclamationLayoutParams);
+		errorImageView.setLayoutParams(exclamationLayoutParams);
 		editText.setId(Calendar.getInstance().get(Calendar.MILLISECOND));
 		editText.addTextChangedListener(this);
 		editText.setHint(hint);
@@ -129,7 +129,7 @@ public class LushEditText extends LinearLayout implements TextWatcher
 		editText.setLayoutParams(editTextLayoutParams);
 		setTitle(title);
 		errorView.setVisibility(isErrorVisible ? VISIBLE : GONE);
-		redExclamationImage.setVisibility(isErrorVisible ? VISIBLE : GONE);
+		errorImageView.setVisibility(isErrorVisible ? VISIBLE : GONE);
 	}
 
 	@Override
@@ -148,7 +148,7 @@ public class LushEditText extends LinearLayout implements TextWatcher
 		{
 			isErrorVisible = false;
 			errorView.setVisibility(GONE);
-			redExclamationImage.setVisibility(GONE);
+			errorImageView.setVisibility(GONE);
 		}
 		isManualTextChange = true;
 		if (textWatcher != null)
@@ -176,7 +176,7 @@ public class LushEditText extends LinearLayout implements TextWatcher
 		isErrorVisible = !TextUtils.isEmpty(error);
 		errorView.setVisibility(isErrorVisible ? VISIBLE : GONE);
 		errorView.setText(error);
-		redExclamationImage.setVisibility(isErrorVisible ? VISIBLE : GONE);
+		errorImageView.setVisibility(isErrorVisible ? VISIBLE : GONE);
 
 	}
 
@@ -264,7 +264,7 @@ public class LushEditText extends LinearLayout implements TextWatcher
 			state = bundle.getParcelable("superState");
 			errorView.setText(bundle.getString(KEY_ERROR_TEXT));
 			errorView.setVisibility(isErrorVisible ? VISIBLE : GONE);
-			redExclamationImage.setVisibility(isErrorVisible ? VISIBLE : GONE);
+			errorImageView.setVisibility(isErrorVisible ? VISIBLE : GONE);
 		}
 		super.onRestoreInstanceState(state);
 	}
@@ -277,5 +277,45 @@ public class LushEditText extends LinearLayout implements TextWatcher
 	public void setTextWatcher(TextWatcher textWatcher)
 	{
 		this.textWatcher = textWatcher;
+	}
+
+	/**
+	 * Gets the title view.
+	 *
+	 * @return the title view
+	 */
+	public TextView getTitleView()
+	{
+		return titleView;
+	}
+
+	/**
+	 * Gets the error view.
+	 *
+	 * @return the error view
+	 */
+	public TextView getErrorView()
+	{
+		return errorView;
+	}
+
+	/**
+	 * Gets the EditText view.
+	 *
+	 * @return the EditText view
+	 */
+	public EditText getEditText()
+	{
+		return editText;
+	}
+
+	/**
+	 * Gets the error image view.
+	 *
+	 * @return the error image view
+	 */
+	public ImageView getErrorImageView()
+	{
+		return errorImageView;
 	}
 }
