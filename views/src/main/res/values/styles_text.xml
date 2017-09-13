@@ -3,6 +3,7 @@
 
 	<style name="Text">
 		<item name="android:textSize">14sp</item>
+		<item name="android:lineSpacingExtra">2dp</item>
 	</style>
 
 	<style name="Text.Black">
@@ -15,10 +16,12 @@
 
 	<style name="Text.White.HandwrittenBold">
 		<item name="fontPath">fonts/Lush_Bold.otf</item>
+		<item name="android:lineSpacingExtra">-12dp</item>
 	</style>
 
 	<style name="Text.White.Handwritten">
 		<item name="fontPath">fonts/Lush_Regular.otf</item>
+		<item name="android:lineSpacingExtra">-12dp</item>
 	</style>
 
 	<style name="Text.White.HelveticaBold">
