@@ -1,14 +1,14 @@
-version = '1.11'
+version = '1.12'
 group = 'com.lush.library'
 apply plugin: 'com.android.library'
 apply plugin: 'com.lush.deploy'
 
 android {
-	compileSdkVersion 25
+	compileSdkVersion 26
 	buildToolsVersion "25.0.3"
 	defaultConfig {
 		minSdkVersion 16
-		targetSdkVersion 25
+		targetSdkVersion 26
 		versionCode 1
 		versionName version
 		testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -23,10 +23,10 @@ android {
 
 dependencies {
 	compile fileTree(dir: 'libs', include: ['*.jar'])
-	compile 'com.android.support:appcompat-v7:25.3.1'
+	compile "com.android.support:appcompat-v7:$supportlib_version"
 	compile 'uk.co.chrisjenx:calligraphy:2.3.0'
 	compile 'com.github.matt-allen:Android-Universal-Image-Loader:2.1.2'
 	compile 'com.yqritc:android-scalablevideoview:1.0.4'
-	compile 'com.android.support:recyclerview-v7:25.3.1'
+	compile "com.android.support:recyclerview-v7:$supportlib_version"
     compile 'com.aurelhubert:ahbottomnavigation:2.0.6'
 }
