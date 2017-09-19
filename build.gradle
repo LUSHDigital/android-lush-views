@@ -18,9 +18,28 @@ allprojects {
 	repositories {
 		jcenter()
 		maven { url "https://jitpack.io" }
+		maven {
+			url "https://maven.google.com"
+		}
 	}
 }
 
 task clean(type: Delete) {
 	delete rootProject.buildDir
+}
+
+ext {
+	supportlib_version = '26.0.2'
+}
+
+subprojects {
+	// Unifies support library version across library dependencies.
+	project.configurations.all {
+		resolutionStrategy.eachDependency { details ->
+			if (details.requested.group == 'com.android.support'
+					&& !details.requested.name.contains('multidex')) {
+				details.useVersion "$supportlib_version"
+			}
+		}
+	}
 }
