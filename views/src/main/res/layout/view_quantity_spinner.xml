@@ -6,4 +6,4 @@
 	android:layout_height="wrap_content"
 	android:minWidth="96dp"
 	android:textAppearance="@style/Text.Black"
-	android:background="@drawable/bg_outline_black"/>
+	android:background="@drawable/bg_outline_light_grey"/>
