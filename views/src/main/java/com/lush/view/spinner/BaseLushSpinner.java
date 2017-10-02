@@ -96,7 +96,7 @@ public abstract class BaseLushSpinner<T> extends Spinner implements AdapterView.
 
 	private void applyStyle()
 	{
-		setBackgroundResource(R.drawable.bg_outline_black);
+		setBackgroundResource(R.drawable.bg_outline_light_grey);
 	}
 
 	public T getSelected()

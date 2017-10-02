@@ -5,7 +5,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
 	android:padding="4dp"
-	android:background="@drawable/bg_outline_black">
+	android:background="@drawable/bg_outline_light_grey">
 
 	<ImageView
 		android:id="@+id/minus"
