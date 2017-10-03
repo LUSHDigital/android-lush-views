@@ -7,7 +7,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import com.lush.lib.listener.OnItemSelectedListener;
 import com.lush.view.R;
 
 import java.util.ArrayList;
