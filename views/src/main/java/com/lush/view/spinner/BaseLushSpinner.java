@@ -95,7 +95,7 @@ public abstract class BaseLushSpinner<T> extends AppCompatSpinner implements Ada
 
 	private void applyStyle()
 	{
-		setBackgroundResource(R.drawable.bg_outline_light_grey);
+		setBackgroundResource(R.drawable.bg_spinner_outline_light_grey);
 	}
 
 	public T getSelected()
