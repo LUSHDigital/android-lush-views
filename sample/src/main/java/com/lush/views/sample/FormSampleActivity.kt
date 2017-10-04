@@ -2,6 +2,10 @@ package com.lush.views.sample
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.lush.view.LushEditText
+import com.lush.views.clearText
+import com.lush.views.validateEmptiness
+import kotlinx.android.synthetic.main.activity_form.*
 import org.jetbrains.anko.toast
 
 /**
@@ -14,6 +18,24 @@ class FormSampleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form)
 
-        toast("Forms")
+        submit.setOnClickListener { validate() }
+    }
+
+    private fun validate()
+    {
+        val fields = arrayOf(address_field, locality_field, postcode_field)
+        val passed = validateFieldsForEmptiness(fields)
+
+        if (passed)
+        {
+            fields.forEach { it.clearText() }
+            toast("Submitted!")
+        }
+    }
+
+    private fun validateFieldsForEmptiness(fields : Array<LushEditText>) : Boolean {
+        var passed = true
+        fields.forEach { if (!it.validateEmptiness()) passed = false }
+        return passed;
     }
 }
