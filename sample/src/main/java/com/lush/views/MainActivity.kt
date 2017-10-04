@@ -1,8 +1,8 @@
-package com.lush.views.sample
+package com.lush.views
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.lush.views.sample.sample.*
+import com.lush.views.sample.*
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
 
