@@ -1,5 +1,5 @@
 <resources>
-	<string name="app_name">Lush Views</string>
+	<string name="app_name">Lush</string>
 	<string name="loading">Loading</string>
 	<string name="default_image_content_desc">Image</string>
 </resources>
