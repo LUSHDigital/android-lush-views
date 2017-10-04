@@ -2,7 +2,6 @@ package com.lush.views.sample
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.lush.views.sample.R
 import org.jetbrains.anko.toast
 
 /**
