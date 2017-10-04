@@ -1,13 +1,12 @@
 package com.lush.view.spinner;
 
 import android.content.Context;
+import android.support.v7.widget.AppCompatSpinner;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 
-import com.lush.lib.listener.OnItemSelectedListener;
 import com.lush.view.R;
 
 import java.util.ArrayList;
@@ -19,7 +18,7 @@ import java.util.List;
  *
  * @author Matt Allen
  */
-public abstract class BaseLushSpinner<T> extends Spinner implements AdapterView.OnItemSelectedListener
+public abstract class BaseLushSpinner<T> extends AppCompatSpinner implements AdapterView.OnItemSelectedListener
 {
 	private List<T> items = new ArrayList<>();
 	private List<com.lush.lib.listener.OnItemSelectedListener<T>> listeners;
@@ -68,9 +67,9 @@ public abstract class BaseLushSpinner<T> extends Spinner implements AdapterView.
 		for (int i = 0, count = getItems().size(); i < count; i++)
 		{
 			T item = getItems().get(i);
-			if(item instanceof String)
+			if (item instanceof String)
 			{
-				if(item.equals(selection))
+				if (item.equals(selection))
 				{
 					setSelection(i);
 					return;
