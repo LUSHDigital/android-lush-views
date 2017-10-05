@@ -10,27 +10,19 @@
 		android:layout_margin="8dp"
 		android:orientation="vertical">
 
-		<TextView
-			style="@style/Text.Black.HandwrittenBold.Title"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_margin="8dp"
-			android:gravity="center"
-			android:text="Lush Views"/>
-
 		<Button
 			android:id="@+id/quantity"
 			style="@style/LushButton.Black"
 			android:layout_width="match_parent"
 			android:layout_margin="8dp"
-			android:text="Quantity"/>
+			android:text="Quantity Input"/>
 
 		<Button
 			android:id="@+id/spinners"
 			style="@style/LushButton.Black"
 			android:layout_width="match_parent"
 			android:layout_margin="8dp"
-			android:text="Basic Spinners"/>
+			android:text="Spinners"/>
 
 		<Button
 			android:id="@+id/ratings"
