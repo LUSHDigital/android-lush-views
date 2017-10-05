@@ -8,4 +8,12 @@
 		<item name="colorAccent">@color/colorAccent</item>
 	</style>
 
+	<style name="Text.Sample" parent="Text.Black.HelveticaBold">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_gravity">center_horizontal</item>
+		<item name="android:layout_margin">8dp</item>
+		<item name="android:textSize">20sp</item>
+	</style>
+
 </resources>
