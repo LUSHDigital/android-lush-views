@@ -42,6 +42,7 @@ public abstract class BaseQuantityView extends FrameLayout
 	public void setMaximum(int maximum)
 	{
 		this.max = maximum;
+		updateAdapter();
 	}
 
 	public int getMaximum()
@@ -90,7 +91,10 @@ public abstract class BaseQuantityView extends FrameLayout
 	}
 
 	protected abstract void updateQuantity();
+
 	protected abstract void createView();
+
+	protected abstract void updateAdapter();
 
 	public void addQuantityUpdateListener(QuantityUpdateListener listener)
 	{
@@ -115,7 +119,7 @@ public abstract class BaseQuantityView extends FrameLayout
 	/**
 	 * Method to remove existing listeners.
 	 */
-	public void removeAllListeners ()
+	public void removeAllListeners()
 	{
 		if (listeners != null)
 		{
