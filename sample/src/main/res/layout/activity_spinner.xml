@@ -1,7 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			  android:orientation="vertical"
-			  android:layout_width="match_parent"
-			  android:layout_height="match_parent">
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
 
-</LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				  android:layout_width="match_parent"
+				  android:layout_height="wrap_content"
+				  android:layout_margin="8dp"
+				  android:orientation="vertical">
+
+		<TextView
+			style="@style/Text.Sample"
+			android:text="Integer Spinner"/>
+
+		<com.lush.view.spinner.IntegerSpinner
+			android:id="@+id/integer_spinner"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:layout_margin="8dp"/>
+
+		<TextView
+			style="@style/Text.Sample"
+			android:text="Language Spinner"/>
+
+		<com.lush.view.spinner.LanguageSpinner
+			android:id="@+id/language_spinner"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:layout_margin="8dp"/>
+
+		<TextView
+			style="@style/Text.Sample"
+			android:text="String Spinner"/>
+
+		<com.lush.view.spinner.StringSpinner
+			android:id="@+id/string_spinner"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:layout_margin="8dp"/>
+
+	</LinearLayout>
+
+</ScrollView>
