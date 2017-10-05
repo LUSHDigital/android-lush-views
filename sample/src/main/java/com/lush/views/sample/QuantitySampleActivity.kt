@@ -1,8 +1,8 @@
 package com.lush.views.sample
 
 import android.os.Bundle
-import org.jetbrains.anko.toast
 import com.lush.views.sample.base.BaseSampleActivity
+import kotlinx.android.synthetic.main.activity_quantity.*
 
 /**
  * Demonstrates what Lush views looks like for inputting quantities of product
@@ -14,6 +14,10 @@ class QuantitySampleActivity : BaseSampleActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quantity)
 
-        toast("Quantities")
+        quantitySpinner.maximum = 10
+        quantitySpinner.quantity = 3
+
+        quantityView.maximum = 10
+        quantityView.quantity = 5
     }
 }
