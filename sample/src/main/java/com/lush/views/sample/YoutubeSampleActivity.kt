@@ -3,7 +3,6 @@ package com.lush.views.sample
 import android.os.Bundle
 import com.lush.views.sample.base.BaseSampleActivity
 import kotlinx.android.synthetic.main.activity_youtube.*
-import org.jetbrains.anko.toast
 
 /**
  * Demonstrates what Lush views looks like for Youtube content
@@ -14,12 +13,6 @@ class YoutubeSampleActivity : BaseSampleActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_youtube)
-
-        toast("Youtube")
-    }
-
-    override fun onResume() {
-        super.onResume()
 
         header.title = "Mask Of Magnaminty Self-Preserving"
         header.subtitle = "Gently cleansed"
