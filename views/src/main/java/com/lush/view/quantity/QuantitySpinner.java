@@ -9,6 +9,8 @@ import android.widget.Spinner;
 
 import com.lush.view.R;
 
+import java.util.ArrayList;
+
 /**
  * Spinner that shows numbers 1 - 30 for the user to select a quantity of products to purchase.
  *
@@ -17,6 +19,7 @@ import com.lush.view.R;
 public class QuantitySpinner extends BaseQuantityView implements AdapterView.OnItemSelectedListener
 {
 	private Spinner spinner;
+	private ArrayAdapter<String> adapter;
 
 	public QuantitySpinner(Context context)
 	{
@@ -43,7 +46,7 @@ public class QuantitySpinner extends BaseQuantityView implements AdapterView.OnI
 	protected void createView()
 	{
 		View view = inflate(getContext(), R.layout.view_quantity_spinner, this);
-		spinner = (Spinner) view.findViewById(R.id.spinner);
+		spinner = view.findViewById(R.id.spinner);
 		createAdapter();
 		spinner.setOnItemSelectedListener(this);
 	}
@@ -51,13 +54,27 @@ public class QuantitySpinner extends BaseQuantityView implements AdapterView.OnI
 	private void createAdapter()
 	{
 		int max = getMaximum();
-		String[] strings = new String[getMaximum()];
+		ArrayList<String> strings = new ArrayList<>();
 		for (int i = 0; i < max; i++)
 		{
-			strings[i] = String.valueOf(i + 1);
+			strings.add(String.valueOf(i + 1));
 		}
-		ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), R.layout.view_spinner_text_item, R.id.name, strings);
+		adapter = new ArrayAdapter<>(getContext(), R.layout.view_spinner_text_item, R.id.name, strings);
 		spinner.setAdapter(adapter);
+	}
+
+	@Override
+	protected void updateAdapter()
+	{
+		if (spinner != null && adapter != null)
+		{
+			adapter.clear();
+			for (int i = 0; i < getMaximum(); i++)
+			{
+				adapter.insert(String.valueOf(i + 1), adapter.getCount());
+			}
+			adapter.notifyDataSetChanged();
+		}
 	}
 
 	@Override
