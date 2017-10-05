@@ -14,10 +14,10 @@ class QuantitySampleActivity : BaseSampleActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quantity)
 
-        quantitySpinner.maximum = 10
-        quantitySpinner.quantity = 3
+        quantitySpinner.maximum = 25
+        quantitySpinner.quantity = 5
 
-        quantityView.maximum = 10
+        quantityView.maximum = 25
         quantityView.quantity = 5
     }
 }

@@ -10,16 +10,26 @@
 				  android:layout_margin="8dp"
 				  android:orientation="vertical">
 
+		<TextView
+			style="@style/Text.Sample"
+			android:text="Quantity Spinner"/>
+
 		<com.lush.view.quantity.QuantitySpinner
 			android:id="@+id/quantitySpinner"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
 			android:layout_margin="8dp"/>
+
+		<TextView
+			style="@style/Text.Sample"
+			android:text="Quantity View"/>
 
 		<com.lush.view.quantity.QuantityView
 			android:id="@+id/quantityView"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
 			android:layout_margin="8dp"/>
 
 	</LinearLayout>
