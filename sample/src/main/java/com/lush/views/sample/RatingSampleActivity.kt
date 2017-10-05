@@ -2,7 +2,7 @@ package com.lush.views.sample
 
 import android.os.Bundle
 import com.lush.views.sample.base.BaseSampleActivity
-import org.jetbrains.anko.toast
+import kotlinx.android.synthetic.main.activity_rating.*
 
 /**
  * Demonstrates what Lush views looks like for ratings and reviews
@@ -14,6 +14,7 @@ class RatingSampleActivity : BaseSampleActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rating)
 
-        toast("Rating")
+        rating_view.rating = 4
+        editable_rating_view.rating = 3
     }
 }
