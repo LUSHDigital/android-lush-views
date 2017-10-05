@@ -1,9 +1,9 @@
 package com.lush.views.sample
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import com.lush.view.LushEditText
 import com.lush.views.clearText
+import com.lush.views.sample.base.BaseSampleActivity
 import com.lush.views.validateEmptiness
 import kotlinx.android.synthetic.main.activity_form.*
 import org.jetbrains.anko.toast
@@ -13,7 +13,7 @@ import org.jetbrains.anko.toast
  *
  * @author Jamie Cruwys
  */
-class FormSampleActivity : AppCompatActivity() {
+class FormSampleActivity : BaseSampleActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form)

@@ -1,7 +1,7 @@
 package com.lush.views.sample
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import com.lush.views.sample.base.BaseSampleActivity
 import org.jetbrains.anko.toast
 
 /**
@@ -9,7 +9,7 @@ import org.jetbrains.anko.toast
  *
  * @author Jamie Cruwys
  */
-class SpinnerSampleActivity : AppCompatActivity() {
+class SpinnerSampleActivity : BaseSampleActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_spinner)
