@@ -5,6 +5,8 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -226,8 +228,13 @@ public class LushEditText extends LinearLayout implements TextWatcher
 	 *
 	 * @return the hint
 	 */
-	public String getHint()
+	@NonNull public String getHint()
 	{
+		if (editText.getHint() == null)
+		{
+			editText.setHint("");
+		}
+
 		return editText.getHint().toString();
 	}
 
@@ -236,8 +243,13 @@ public class LushEditText extends LinearLayout implements TextWatcher
 	 *
 	 * @param hint the hint.
 	 */
-	public void setHint(String hint)
+	public void setHint(@Nullable String hint)
 	{
+		if (hint == null)
+		{
+			hint = "";
+		}
+
 		editText.setHint(hint);
 		this.hint = hint;
 	}
