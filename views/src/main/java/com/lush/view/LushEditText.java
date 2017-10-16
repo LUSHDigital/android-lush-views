@@ -105,10 +105,10 @@ public class LushEditText extends LinearLayout implements TextWatcher
 	private void populateViews(Context context)
 	{
 		LinearLayout lushEditTextLayout = (LinearLayout) LayoutInflater.from(context).inflate(R.layout.view_lush_edit_text, this, false);
-		errorView = (TextView) lushEditTextLayout.findViewById(R.id.lush_edit_text_error);
-		titleView = (TextView) lushEditTextLayout.findViewById(R.id.lush_edit_text_title);
-		editText = (EditText) lushEditTextLayout.findViewById(R.id.lush_edit_text);
-		errorImageView = (ImageView) lushEditTextLayout.findViewById(R.id.red_exclamation);
+		errorView = lushEditTextLayout.findViewById(R.id.lush_edit_text_error);
+		titleView = lushEditTextLayout.findViewById(R.id.lush_edit_text_title);
+		editText = lushEditTextLayout.findViewById(R.id.lush_edit_text);
+		errorImageView = lushEditTextLayout.findViewById(R.id.red_exclamation);
 		addView(lushEditTextLayout);
 	}
 
@@ -228,7 +228,7 @@ public class LushEditText extends LinearLayout implements TextWatcher
 	 */
 	public String getHint()
 	{
-		return hint;
+		return editText.getHint().toString();
 	}
 
 	/**
@@ -238,6 +238,7 @@ public class LushEditText extends LinearLayout implements TextWatcher
 	 */
 	public void setHint(String hint)
 	{
+		editText.setHint(hint);
 		this.hint = hint;
 	}
 
