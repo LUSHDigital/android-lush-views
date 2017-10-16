@@ -7,8 +7,31 @@
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_margin="8dp"
-		android:orientation="vertical">
+		android:orientation="vertical"
+		android:padding="8dp">
+
+		<TextView
+			style="@style/Text.Black.HandwrittenBold.Title"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:layout_margin="8dp"
+			android:gravity="center"
+			android:text="Views"/>
+
+		<Button
+			android:id="@+id/buttons"
+			style="@style/LushButton.Black"
+			android:layout_width="match_parent"
+			android:layout_margin="8dp"
+			android:text="Buttons"/>
+
+		<Button
+			android:id="@+id/text"
+			style="@style/LushButton.Black"
+			android:layout_width="match_parent"
+			android:layout_margin="8dp"
+			android:text="Text"/>
 
 		<Button
 			android:id="@+id/quantity"
@@ -36,7 +59,7 @@
 			style="@style/LushButton.Black"
 			android:layout_width="match_parent"
 			android:layout_margin="8dp"
-			android:text="Form Fields"/>
+			android:text="Forms"/>
 
 		<Button
 			android:id="@+id/youtube"

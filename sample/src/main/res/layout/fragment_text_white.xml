@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@android:color/black">
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				  android:layout_width="match_parent"
+				  android:layout_height="wrap_content"
+				  android:layout_margin="8dp"
+				  android:gravity="center"
+				  android:orientation="vertical"
+				  android:padding="8dp">
+
+		<TextView
+			style="@style/Text.White"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="Normal \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet massa ut augue vestibulum convallis. Vivamus scelerisque vestibulum nunc, non euismod sapien eleifend sed."/>
+
+		<TextView
+			style="@style/Text.White.HelveticaBold"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="Helvetica Bold \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet massa ut augue vestibulum convallis. Vivamus scelerisque vestibulum nunc, non euismod sapien eleifend sed."/>
+
+		<TextView
+			style="@style/Text.White.HelveticaRoman"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="Helvetica Roman \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet massa ut augue vestibulum convallis. Vivamus scelerisque vestibulum nunc, non euismod sapien eleifend sed."/>
+
+		<TextView
+			style="@style/Text.White.Handwritten"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="Handwritten \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet massa ut augue vestibulum convallis. Vivamus scelerisque vestibulum nunc, non euismod sapien eleifend sed."/>
+
+		<TextView
+			style="@style/Text.White.HandwrittenBold"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="Handwritten Bold \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet massa ut augue vestibulum convallis. Vivamus scelerisque vestibulum nunc, non euismod sapien eleifend sed."/>
+
+	</LinearLayout>
+
+</ScrollView>

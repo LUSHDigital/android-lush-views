@@ -3,14 +3,13 @@
 		  package="com.lush.views.sample">
 
 	<application
+		android:name="com.lush.views.MainApplication"
 		android:allowBackup="true"
 		android:icon="@mipmap/ic_launcher"
 		android:label="@string/app_name"
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
-		android:name="com.lush.views.MainApplication"
 		android:theme="@style/AppTheme">
-
 		<activity android:name="com.lush.views.MainActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN"/>
@@ -18,61 +17,77 @@
 				<category android:name="android.intent.category.LAUNCHER"/>
 			</intent-filter>
 		</activity>
-
-		<activity android:name=".QuantitySampleActivity"
-				  android:parentActivityName="com.lush.views.MainActivity"
-				  android:label="Quantity Input">
+		<activity
+			android:name=".ButtonsSampleActivity"
+			android:label="Buttons"
+			android:parentActivityName="com.lush.views.MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="com.lush.views.MainActivity" />
+				android:value="com.lush.views.MainActivity"/>
 		</activity>
-
-		<activity android:name=".SpinnerSampleActivity"
-				  android:parentActivityName="com.lush.views.MainActivity"
-				  android:label="Spinners">
+		<activity
+			android:name=".TextSampleActivity"
+			android:label="Text"
+			android:parentActivityName="com.lush.views.MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="com.lush.views.MainActivity" />
+				android:value="com.lush.views.MainActivity"/>
 		</activity>
-
-		<activity android:name=".RatingSampleActivity"
-				  android:parentActivityName="com.lush.views.MainActivity"
-				  android:label="Ratings">
+		<activity
+			android:name=".QuantitySampleActivity"
+			android:label="Quantity Input"
+			android:parentActivityName="com.lush.views.MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="com.lush.views.MainActivity" />
+				android:value="com.lush.views.MainActivity"/>
 		</activity>
-
-		<activity android:name=".FormSampleActivity"
-				  android:parentActivityName="com.lush.views.MainActivity"
-				  android:label="Form Fields">
+		<activity
+			android:name=".SpinnerSampleActivity"
+			android:label="Spinners"
+			android:parentActivityName="com.lush.views.MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="com.lush.views.MainActivity" />
+				android:value="com.lush.views.MainActivity"/>
 		</activity>
-
-		<activity android:name=".YoutubeSampleActivity"
-				  android:parentActivityName="com.lush.views.MainActivity"
-				  android:label="YouTube">
+		<activity
+			android:name=".RatingSampleActivity"
+			android:label="Ratings"
+			android:parentActivityName="com.lush.views.MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="com.lush.views.MainActivity" />
+				android:value="com.lush.views.MainActivity"/>
 		</activity>
-
-		<activity android:name=".WebViewSampleActivity"
-				  android:parentActivityName="com.lush.views.MainActivity"
-				  android:label="WebViews">
+		<activity
+			android:name=".FormSampleActivity"
+			android:label="Form Fields"
+			android:parentActivityName="com.lush.views.MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="com.lush.views.MainActivity" />
+				android:value="com.lush.views.MainActivity"/>
 		</activity>
-
-		<activity android:name=".ImageSampleActivity"
-				  android:parentActivityName="com.lush.views.MainActivity"
-				  android:label="Images">
+		<activity
+			android:name=".YoutubeSampleActivity"
+			android:label="YouTube"
+			android:parentActivityName="com.lush.views.MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="com.lush.views.MainActivity" />
+				android:value="com.lush.views.MainActivity"/>
+		</activity>
+		<activity
+			android:name=".WebViewSampleActivity"
+			android:label="WebViews"
+			android:parentActivityName="com.lush.views.MainActivity">
+			<meta-data
+				android:name="android.support.PARENT_ACTIVITY"
+				android:value="com.lush.views.MainActivity"/>
+		</activity>
+		<activity
+			android:name=".ImageSampleActivity"
+			android:label="Images"
+			android:parentActivityName="com.lush.views.MainActivity">
+			<meta-data
+				android:name="android.support.PARENT_ACTIVITY"
+				android:value="com.lush.views.MainActivity"/>
 		</activity>
 	</application>
 

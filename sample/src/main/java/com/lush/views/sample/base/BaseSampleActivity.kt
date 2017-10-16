@@ -2,15 +2,15 @@ package com.lush.views.sample.base
 
 import android.os.Bundle
 import android.support.v4.app.NavUtils
-import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
+import com.lush.views.base.BaseActivity
 
 /**
  * <Class Description>
  *
  * @author Jamie Cruwys
  */
-abstract class BaseSampleActivity : AppCompatActivity() {
+abstract class BaseSampleActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         actionBar?.setDisplayHomeAsUpEnabled(true)
