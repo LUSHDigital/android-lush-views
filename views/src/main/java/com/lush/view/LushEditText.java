@@ -5,6 +5,8 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -105,10 +107,10 @@ public class LushEditText extends LinearLayout implements TextWatcher
 	private void populateViews(Context context)
 	{
 		LinearLayout lushEditTextLayout = (LinearLayout) LayoutInflater.from(context).inflate(R.layout.view_lush_edit_text, this, false);
-		errorView = (TextView) lushEditTextLayout.findViewById(R.id.lush_edit_text_error);
-		titleView = (TextView) lushEditTextLayout.findViewById(R.id.lush_edit_text_title);
-		editText = (EditText) lushEditTextLayout.findViewById(R.id.lush_edit_text);
-		errorImageView = (ImageView) lushEditTextLayout.findViewById(R.id.red_exclamation);
+		errorView = lushEditTextLayout.findViewById(R.id.lush_edit_text_error);
+		titleView = lushEditTextLayout.findViewById(R.id.lush_edit_text_title);
+		editText = lushEditTextLayout.findViewById(R.id.lush_edit_text);
+		errorImageView = lushEditTextLayout.findViewById(R.id.red_exclamation);
 		addView(lushEditTextLayout);
 	}
 
@@ -226,9 +228,14 @@ public class LushEditText extends LinearLayout implements TextWatcher
 	 *
 	 * @return the hint
 	 */
-	public String getHint()
+	@NonNull public String getHint()
 	{
-		return hint;
+		if (editText.getHint() == null)
+		{
+			editText.setHint("");
+		}
+
+		return editText.getHint().toString();
 	}
 
 	/**
@@ -236,8 +243,14 @@ public class LushEditText extends LinearLayout implements TextWatcher
 	 *
 	 * @param hint the hint.
 	 */
-	public void setHint(String hint)
+	public void setHint(@Nullable String hint)
 	{
+		if (hint == null)
+		{
+			hint = "";
+		}
+
+		editText.setHint(hint);
 		this.hint = hint;
 	}
 
