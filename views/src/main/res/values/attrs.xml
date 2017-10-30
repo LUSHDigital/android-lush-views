@@ -9,5 +9,6 @@
 		<attr name="editTextHint" format="string"/>
 		<attr name="title" format="string"/>
 		<attr name="android:inputType"/>
+		<attr name="copyPasteEnabled" format="boolean"/>
 	</declare-styleable>
 </resources>
