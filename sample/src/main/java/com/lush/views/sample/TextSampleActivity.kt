@@ -5,12 +5,10 @@ import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
-import android.support.v4.app.NavUtils
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import com.lush.views.base.BaseActivity
+import com.lush.views.sample.base.BaseSampleActivity
 import kotlinx.android.synthetic.main.activity_main2.*
 
 /**
@@ -18,29 +16,18 @@ import kotlinx.android.synthetic.main.activity_main2.*
  *
  * @author Jamie Cruwys
  */
-class TextSampleActivity : BaseActivity() {
+class TextSampleActivity : BaseSampleActivity() {
     private var mSectionsPagerAdapter: SectionsPagerAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
-        actionBar?.setDisplayHomeAsUpEnabled(true)
-
         mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
         container.adapter = mSectionsPagerAdapter
 
         container.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabs))
         tabs.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(container))
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        if (item?.itemId == android.R.id.home)
-        {
-            NavUtils.navigateUpFromSameTask(this)
-            return true
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     inner class SectionsPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
