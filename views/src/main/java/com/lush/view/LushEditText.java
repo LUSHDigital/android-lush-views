@@ -12,7 +12,10 @@ import android.text.InputType;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
+import android.view.ActionMode;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -50,6 +53,7 @@ public class LushEditText extends LinearLayout implements TextWatcher
 	private String hint;
 	private String title;
 	private int inputType;
+	private boolean copyPasteEnabled;
 
 	private boolean isErrorVisible;
 	private boolean isManualTextChange;
@@ -95,7 +99,7 @@ public class LushEditText extends LinearLayout implements TextWatcher
 				hint = a.getString(R.styleable.LushEditText_editTextHint);
 				title = a.getString(R.styleable.LushEditText_title);
 				inputType = a.getInt(R.styleable.LushEditText_android_inputType, InputType.TYPE_CLASS_TEXT);
-
+				copyPasteEnabled = a.getBoolean(R.styleable.LushEditText_copyPasteEnabled, true);
 			}
 			finally
 			{
@@ -132,6 +136,44 @@ public class LushEditText extends LinearLayout implements TextWatcher
 		setTitle(title);
 		errorView.setVisibility(isErrorVisible ? VISIBLE : GONE);
 		errorImageView.setVisibility(isErrorVisible ? VISIBLE : GONE);
+		setCopyPasteEnabled(copyPasteEnabled);
+	}
+
+	public void setCopyPasteEnabled(final boolean enabled)
+	{
+		EditText editText = getEditText();
+
+		if (editText != null)
+		{
+			editText.setLongClickable(enabled);
+			editText.setTextIsSelectable(enabled);
+			editText.setCustomSelectionActionModeCallback(new ActionMode.Callback()
+			{
+				@Override
+				public boolean onCreateActionMode(ActionMode mode, Menu menu)
+				{
+					return enabled;
+				}
+
+				@Override
+				public boolean onPrepareActionMode(ActionMode mode, Menu menu)
+				{
+					return false;
+				}
+
+				@Override
+				public boolean onActionItemClicked(ActionMode mode, MenuItem item)
+				{
+					return false;
+				}
+
+				@Override
+				public void onDestroyActionMode(ActionMode mode)
+				{
+
+				}
+			});
+		}
 	}
 
 	@Override
