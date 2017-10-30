@@ -36,9 +36,9 @@ public class QuantityView extends BaseQuantityView implements View.OnClickListen
 	protected void createView()
 	{
 		View view = inflate(getContext(), R.layout.view_quantity, this);
-		plus = (ImageView) view.findViewById(R.id.plus);
-		minus = (ImageView) view.findViewById(R.id.minus);
-		number = (TextView) view.findViewById(R.id.number);
+		plus = view.findViewById(R.id.plus);
+		minus = view.findViewById(R.id.minus);
+		number = view.findViewById(R.id.number);
 		plus.setOnClickListener(this);
 		minus.setOnClickListener(this);
 	}
@@ -62,5 +62,11 @@ public class QuantityView extends BaseQuantityView implements View.OnClickListen
 	protected void updateQuantity()
 	{
 		number.setText(String.valueOf(getQuantity()));
+	}
+
+	@Override
+	protected void updateAdapter()
+	{
+		// Unused
 	}
 }
