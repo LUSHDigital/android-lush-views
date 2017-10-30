@@ -158,13 +158,13 @@ public class LushEditText extends LinearLayout implements TextWatcher
 				@Override
 				public boolean onPrepareActionMode(ActionMode mode, Menu menu)
 				{
-					return enabled;
+					return false;
 				}
 
 				@Override
 				public boolean onActionItemClicked(ActionMode mode, MenuItem item)
 				{
-					return enabled;
+					return false;
 				}
 
 				@Override
