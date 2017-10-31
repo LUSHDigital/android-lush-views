@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@android:color/black">
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				  android:layout_width="match_parent"
+				  android:layout_height="wrap_content"
+				  android:gravity="center"
+				  android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="8dp"
+			android:background="@android:color/white"
+			android:gravity="center"
+			android:orientation="vertical"
+			android:padding="8dp">
+
+			<Button
+				style="@style/LushButton.Black"
+				android:layout_margin="8dp"
+				android:text="Black"/>
+
+			<Button
+				style="@style/LushButton.Black.Round"
+				android:layout_margin="8dp"
+				android:text="Black Round"/>
+
+			<Button
+				style="@style/LushButton.BlackSecondary.Round"
+				android:layout_margin="8dp"
+				android:text="Black Secondary Round"/>
+
+			<Button
+				style="@style/LushButton.BlackSecondaryTransparent"
+				android:layout_margin="8dp"
+				android:text="Black Secondary Transparent"/>
+
+		</LinearLayout>
+
+		<Button
+			style="@style/LushButton.BlackSecondary"
+			android:layout_margin="8dp"
+			android:text="Black Secondary"/>
+
+
+		<Button
+			style="@style/LushButton.White"
+			android:layout_margin="8dp"
+			android:text="White"/>
+
+	</LinearLayout>
+
+</ScrollView>

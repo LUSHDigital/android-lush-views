@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:padding="8dp">
+
+		<TextView
+			style="@style/Text.Black.HandwrittenBold.Title"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:layout_margin="8dp"
+			android:gravity="center"
+			android:text="Views"/>
+
+		<Button
+			android:id="@+id/buttons"
+			style="@style/LushButton.Black"
+			android:layout_width="match_parent"
+			android:layout_margin="8dp"
+			android:text="Buttons"/>
+
+		<Button
+			android:id="@+id/text"
+			style="@style/LushButton.Black"
+			android:layout_width="match_parent"
+			android:layout_margin="8dp"
+			android:text="Text"/>
+
+		<Button
+			android:id="@+id/quantity"
+			style="@style/LushButton.Black"
+			android:layout_width="match_parent"
+			android:layout_margin="8dp"
+			android:text="Quantity Input"/>
+
+		<Button
+			android:id="@+id/spinners"
+			style="@style/LushButton.Black"
+			android:layout_width="match_parent"
+			android:layout_margin="8dp"
+			android:text="Spinners"/>
+
+		<Button
+			android:id="@+id/ratings"
+			style="@style/LushButton.Black"
+			android:layout_width="match_parent"
+			android:layout_margin="8dp"
+			android:text="Ratings"/>
+
+		<Button
+			android:id="@+id/forms"
+			style="@style/LushButton.Black"
+			android:layout_width="match_parent"
+			android:layout_margin="8dp"
+			android:text="Forms"/>
+
+		<Button
+			android:id="@+id/youtube"
+			style="@style/LushButton.Black"
+			android:layout_width="match_parent"
+			android:layout_margin="8dp"
+			android:text="Youtube"/>
+
+		<Button
+			android:id="@+id/webviews"
+			style="@style/LushButton.Black"
+			android:layout_width="match_parent"
+			android:layout_margin="8dp"
+			android:text="Webviews"/>
+
+		<Button
+			android:id="@+id/images"
+			style="@style/LushButton.Black"
+			android:layout_width="match_parent"
+			android:layout_margin="8dp"
+			android:text="Images"/>
+
+	</LinearLayout>
+
+</ScrollView>

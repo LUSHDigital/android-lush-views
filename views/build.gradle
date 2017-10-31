@@ -1,11 +1,11 @@
-version = '1.19'
+version = '1.20'
 group = 'com.lush.library'
 apply plugin: 'com.android.library'
 apply plugin: 'com.lush.deploy'
 
 android {
 	compileSdkVersion 26
-	buildToolsVersion "25.0.3"
+	buildToolsVersion "26.0.2"
 	defaultConfig {
 		minSdkVersion 16
 		targetSdkVersion 26

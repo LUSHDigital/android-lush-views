@@ -1,1 +1,1 @@
-include ':views'
+include ':views', ':sample'
