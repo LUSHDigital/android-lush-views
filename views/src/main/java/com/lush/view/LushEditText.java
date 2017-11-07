@@ -146,7 +146,6 @@ public class LushEditText extends LinearLayout implements TextWatcher
 		if (editText != null)
 		{
 			editText.setLongClickable(enabled);
-			editText.setTextIsSelectable(enabled);
 			editText.setCustomSelectionActionModeCallback(new ActionMode.Callback()
 			{
 				@Override

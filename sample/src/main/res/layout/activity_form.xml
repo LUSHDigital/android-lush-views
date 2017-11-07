@@ -35,6 +35,16 @@
 			app:editTextHint="Postcode"
 			app:title="Postcode"/>
 
+		<com.lush.view.LushEditText
+			android:id="@+id/credit_card"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="16dp"
+			android:inputType="number"
+			app:copyPasteEnabled="false"
+			app:editTextHint="Credit card"
+			app:title="Credit card"/>
+
 		<Button
 			android:id="@+id/submit"
 			style="@style/LushButton.Black"
