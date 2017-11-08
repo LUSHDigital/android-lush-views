@@ -31,7 +31,6 @@ dependencies {
 	compile "com.android.support:recyclerview-v7:$supportlib_version"
 	compile "com.android.support:transition:$supportlib_version"
 	compile "com.android.support:support-annotations:$supportlib_version"
-	compile "com.android.support:support-v4:$supportlib_version"
 
 	compile 'uk.co.chrisjenx:calligraphy:2.3.0', {
 		exclude group: 'com.android.support'
