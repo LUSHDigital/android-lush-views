@@ -4,11 +4,11 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.lush.deploy'
 
 android {
-	compileSdkVersion 26
+	compileSdkVersion 27
 	buildToolsVersion "26.0.2"
 	defaultConfig {
 		minSdkVersion 16
-		targetSdkVersion 26
+		targetSdkVersion 27
 		versionCode 1
 		versionName version
 		testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
