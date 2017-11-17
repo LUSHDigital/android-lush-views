@@ -54,6 +54,19 @@
 		<item name="android:background">@drawable/state_button_white_primary</item>
 	</style>
 
+	<style name="LushButton.WhiteSecondary">
+		<item name="android:textColor">@drawable/state_button_text_white</item>
+		<item name="android:background">@drawable/state_button_white_secondary</item>
+	</style>
+
+	<style name="LushButton.White.Round">
+		<item name="android:background">@drawable/state_button_white_round_primary</item>
+	</style>
+
+	<style name="LushButton.WhiteSecondary.Round">
+		<item name="android:background">@drawable/state_button_white_round_secondary</item>
+	</style>
+
 	<style name="LushButton.BlackSecondary">
 		<item name="android:textColor">@drawable/state_button_text_black</item>
 		<item name="android:background">@drawable/state_button_black_secondary</item>

@@ -5,11 +5,12 @@
 	android:layout_height="match_parent"
 	android:background="@android:color/black">
 
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-				  android:layout_width="match_parent"
-				  android:layout_height="wrap_content"
-				  android:gravity="center"
-				  android:orientation="vertical">
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:orientation="vertical">
 
 		<LinearLayout
 			android:layout_width="match_parent"
@@ -27,31 +28,50 @@
 
 			<Button
 				style="@style/LushButton.Black.Round"
+				android:layout_width="56dp"
 				android:layout_margin="8dp"
-				android:text="Black Round"/>
+				android:text="B"/>
 
 			<Button
 				style="@style/LushButton.BlackSecondary.Round"
+				android:layout_width="56dp"
 				android:layout_margin="8dp"
-				android:text="Black Secondary Round"/>
+				android:text="B"/>
 
 			<Button
 				style="@style/LushButton.BlackSecondaryTransparent"
 				android:layout_margin="8dp"
+				android:layout_height="wrap_content"
 				android:text="Black Secondary Transparent"/>
 
+			<Button
+				style="@style/LushButton.BlackSecondary"
+				android:layout_margin="8dp"
+				android:text="Black Secondary"/>
+
 		</LinearLayout>
-
-		<Button
-			style="@style/LushButton.BlackSecondary"
-			android:layout_margin="8dp"
-			android:text="Black Secondary"/>
-
 
 		<Button
 			style="@style/LushButton.White"
 			android:layout_margin="8dp"
 			android:text="White"/>
+
+		<Button
+			style="@style/LushButton.WhiteSecondary"
+			android:layout_margin="8dp"
+			android:text="White Secondary"/>
+
+		<Button
+			style="@style/LushButton.White.Round"
+			android:layout_width="56dp"
+			android:layout_margin="8dp"
+			android:text="W"/>
+
+		<Button
+			style="@style/LushButton.WhiteSecondary.Round"
+			android:layout_width="56dp"
+			android:layout_margin="8dp"
+			android:text="W"/>
 
 	</LinearLayout>
 
