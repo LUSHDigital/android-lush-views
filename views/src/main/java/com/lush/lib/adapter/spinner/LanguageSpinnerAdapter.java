@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Locale;
 
 /**
- * @author Matt Allen
+ * @author Matt Allen, Gokhan
  */
 public class LanguageSpinnerAdapter extends BaseSpinnerAdapter<Locale>
 {
@@ -30,11 +30,11 @@ public class LanguageSpinnerAdapter extends BaseSpinnerAdapter<Locale>
 			String language = item.getDisplayLanguage(item);
 			if (item == Locale.TRADITIONAL_CHINESE)
 			{
-				language = convertView.getContext().getString(R.string.chinese_traditional);
+				language = getContext().getString(R.string.chinese_traditional);
 			}
 			else if (item == Locale.SIMPLIFIED_CHINESE)
 			{
-				language = convertView.getContext().getString(R.string.chinese_simplified);
+				language = getContext().getString(R.string.chinese_simplified);
 			}
 			else if (!TextUtils.isEmpty(language))
 			{
