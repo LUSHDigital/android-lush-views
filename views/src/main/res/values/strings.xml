@@ -2,4 +2,6 @@
 	<string name="app_name">Lush</string>
 	<string name="loading">Loading</string>
 	<string name="default_image_content_desc">Image</string>
+	<string name="chinese_traditional">Chinese Traditional | 繁體中文</string>
+	<string name="chinese_simplified">Chinese Simplified | 简体中文</string>
 </resources>
