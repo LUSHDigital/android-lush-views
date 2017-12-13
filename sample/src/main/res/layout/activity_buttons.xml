@@ -73,6 +73,25 @@
 			android:layout_margin="8dp"
 			android:text="W"/>
 
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@drawable/img_background"
+			android:orientation="vertical">
+
+			<Button
+				android:layout_margin="8dp"
+				android:text="Glass Button"
+				style="@style/LushButton.Glass"/>
+
+			<Button
+				android:layout_width="56dp"
+				android:layout_margin="8dp"
+				android:text="G"
+				style="@style/LushButton.Glass.Round"/>
+
+		</LinearLayout>
+
 	</LinearLayout>
 
 </ScrollView>

@@ -6,4 +6,7 @@
 	<color name="dark_grey">#8F8F8F</color>
 	<color name="light_grey">#EAEAEA</color>
 	<color name="grey">#CECECE</color>
+	<color name="btn_glass_inactive">#55999999</color>
+	<color name="btn_glass_normal">#44CCCCCC</color>
+	<color name="btn_glass_selected">#88DDDDDD</color>
 </resources>

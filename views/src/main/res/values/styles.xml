@@ -63,6 +63,15 @@
 		<item name="android:background">@drawable/state_button_white_round_primary</item>
 	</style>
 
+	<style name="LushButton.Glass">
+		<item name="android:textColor">@drawable/state_button_text_white</item>
+		<item name="android:background">@drawable/state_button_glass</item>
+	</style>
+	
+	<style name="LushButton.Glass.Round">
+		<item name="android:background">@drawable/state_button_glass_round</item>
+	</style>
+
 	<style name="LushButton.WhiteSecondary.Round">
 		<item name="android:background">@drawable/state_button_white_round_secondary</item>
 	</style>

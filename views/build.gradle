@@ -1,4 +1,4 @@
-version = '1.25'
+version = '1.26'
 group = 'com.lush.library'
 apply plugin: 'com.android.library'
 apply plugin: 'com.lush.deploy'
