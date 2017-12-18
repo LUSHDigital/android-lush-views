@@ -10,61 +10,57 @@ import android.net.Uri
  *
  * @author Gokhan
  */
-class LinkHandler
+object LinkHandler
 {
-	companion object
+	fun handleLink(context: Context, urlString: String?): Boolean
 	{
-		@JvmStatic
-		fun handleLink(context: Context, urlString: String?): Boolean
+		if (urlString != null)
 		{
-			if (urlString != null)
+			when
 			{
-				when
+				urlString.startsWith("tel:")    ->
 				{
-					urlString.startsWith("tel:")    ->
-					{
-						val intent = Intent(Intent.ACTION_DIAL, Uri.parse(urlString))
-						attemptStartActivity(context, intent)
-						return true
-					}
-					urlString.startsWith("mailto:") ->
-					{
-						val url = urlString.substring(7)
-						val mail = Intent(Intent.ACTION_SENDTO)
-						mail.type = "message/rfc822"
-						mail.putExtra(Intent.EXTRA_EMAIL, arrayOf(url))
-						mail.putExtra(Intent.EXTRA_SUBJECT, "")
-						mail.putExtra(Intent.EXTRA_TEXT, "")
-						attemptStartActivity(context, mail)
-						return true
-					}
-					urlString.startsWith("map:")    ->
-					{
-						val url = urlString.substring(4)
-						val map = "http://maps.google.com/maps?q=" + url
-						val intent = Intent(Intent.ACTION_VIEW, Uri.parse(map))
-						attemptStartActivity(context, intent)
-						return true
-					}
-					else                            ->
-					{
-					}
+					val intent = Intent(Intent.ACTION_DIAL, Uri.parse(urlString))
+					attemptStartActivity(context, intent)
+					return true
+				}
+				urlString.startsWith("mailto:") ->
+				{
+					val url = urlString.substring(7)
+					val mail = Intent(Intent.ACTION_SENDTO)
+					mail.type = "message/rfc822"
+					mail.putExtra(Intent.EXTRA_EMAIL, arrayOf(url))
+					mail.putExtra(Intent.EXTRA_SUBJECT, "")
+					mail.putExtra(Intent.EXTRA_TEXT, "")
+					attemptStartActivity(context, mail)
+					return true
+				}
+				urlString.startsWith("map:")    ->
+				{
+					val url = urlString.substring(4)
+					val map = "http://maps.google.com/maps?q=" + url
+					val intent = Intent(Intent.ACTION_VIEW, Uri.parse(map))
+					attemptStartActivity(context, intent)
+					return true
+				}
+				else                            ->
+				{
 				}
 			}
-			return false
 		}
+		return false
+	}
 
-		@JvmStatic private fun attemptStartActivity(context: Context, mail: Intent)
+	private fun attemptStartActivity(context: Context, mail: Intent)
+	{
+		try
 		{
-			try
-			{
-				context.startActivity(mail)
-			}
-			catch (e: ActivityNotFoundException)
-			{
-				// Do nothing if no associated apps present on device
-			}
-
+			context.startActivity(mail)
 		}
+		catch (e: ActivityNotFoundException)
+		{
+			// Do nothing if no associated apps present on device
+		}
+
 	}
 }

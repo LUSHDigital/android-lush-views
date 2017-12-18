@@ -65,7 +65,7 @@ public class WebViewFragment extends Fragment
 			@Override
 			public boolean shouldOverrideUrlLoading(WebView view, String url)
 			{
-				return getContext() != null && LinkHandler.handleLink(getContext(), url);
+				return getContext() != null && LinkHandler.INSTANCE.handleLink(getContext(), url);
 			}
 		});
 		mWebView.loadUrl(mUrl);
