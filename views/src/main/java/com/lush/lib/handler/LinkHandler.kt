@@ -27,7 +27,7 @@ object LinkHandler
 				urlString.startsWith("mailto:") ->
 				{
 					val url = urlString.substring(7)
-					val mail = Intent(Intent.ACTION_SENDTO)
+					val mail = Intent(Intent.ACTION_SEND)
 					mail.type = "message/rfc822"
 					mail.putExtra(Intent.EXTRA_EMAIL, arrayOf(url))
 					mail.putExtra(Intent.EXTRA_SUBJECT, "")
