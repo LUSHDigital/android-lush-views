@@ -1,19 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent">
 
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-				  android:layout_width="match_parent"
-				  android:layout_height="wrap_content"
-				  android:layout_margin="8dp"
-				  android:orientation="vertical">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  android:layout_width="match_parent"
+			  android:layout_height="match_parent"
+			  android:layout_margin="8dp"
+			  android:orientation="vertical">
 
-		<TextView
-			style="@style/Text.Sample"
-			android:text="TODO"/>
+	<EditText
+		android:id="@+id/url_field"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:hint="Add url and click one of the buttons below"/>
 
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+
+		<Button
+			android:id="@+id/button_support_webview"
+			style="@style/LushButton.Black"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="4dp"
+			android:layout_weight="1"
+			android:text="Support webview"/>
+
+		<Button
+			android:id="@+id/button_webview"
+			style="@style/LushButton.Black"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="4dp"
+			android:layout_weight="1"
+			android:text="Pre-support webview"/>
 	</LinearLayout>
 
-</ScrollView>
+	<FrameLayout
+		android:id="@+id/fragment_container"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+	</FrameLayout>
+
+</LinearLayout>
