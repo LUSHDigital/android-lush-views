@@ -30,8 +30,8 @@ class LinkHandler
 					urlString.startsWith("mailto:") ->
 					{
 						val url = urlString.substring(7)
-						val mail = Intent(Intent.ACTION_SEND)
-						mail.type = "application/octet-stream"
+						val mail = Intent(Intent.ACTION_SENDTO)
+						mail.type = "message/rfc822"
 						mail.putExtra(Intent.EXTRA_EMAIL, arrayOf(url))
 						mail.putExtra(Intent.EXTRA_SUBJECT, "")
 						mail.putExtra(Intent.EXTRA_TEXT, "")
