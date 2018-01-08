@@ -93,7 +93,14 @@ public abstract class BaseListAdapter<T> extends RecyclerView.Adapter<BaseViewHo
 		if (mItems != null)
 		{
 			T item = mItems.remove(fromPosition);
-			mItems.add(toPosition, item);
+			if (toPosition >= mItems.size())
+			{
+				mItems.add(item);
+			}
+			else
+			{
+				mItems.add(toPosition, item);
+			}
 			notifyItemMoved(fromPosition, toPosition);
 		}
 	}
