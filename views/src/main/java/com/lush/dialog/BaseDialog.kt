@@ -1,10 +1,12 @@
-package com.lush.views.base
+package com.lush.dialog
 
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.support.annotation.LayoutRes
 import android.support.v4.app.DialogFragment
+import android.support.v4.app.FragmentManager
+import android.support.v4.app.FragmentTransaction
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +15,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.FrameLayout
 import android.widget.ImageButton
 import android.widget.TextView
-import com.lush.views.sample.R
+import com.lush.view.R
 
 /**
  * Base class for all dialogs.
@@ -26,6 +28,11 @@ abstract class BaseDialog: DialogFragment(), View.OnKeyListener
 	init
 	{
 		retainInstance = true
+	}
+
+	fun show(manager: FragmentManager?)
+	{
+		super.show(manager, null)
 	}
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
@@ -97,6 +104,8 @@ abstract class BaseDialog: DialogFragment(), View.OnKeyListener
 			imm.hideSoftInputFromWindow(view.windowToken, 0)
 		}
 	}
+
+	fun show(transaction: FragmentTransaction?): Int = super.show(transaction, null)
 
 	@LayoutRes protected abstract fun getLayoutResource(): Int
 	protected abstract fun onInnerViewCreated()
