@@ -1,12 +1,12 @@
 package com.lush.dialog
 
+import android.app.DialogFragment
+import android.app.FragmentManager
+import android.app.FragmentTransaction
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.support.annotation.LayoutRes
-import android.support.v4.app.DialogFragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentTransaction
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
@@ -100,7 +100,7 @@ abstract class BaseDialog: DialogFragment(), View.OnKeyListener
 		val view = view
 		if (view != null)
 		{
-			val imm = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+			val imm = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
 			imm.hideSoftInputFromWindow(view.windowToken, 0)
 		}
 	}
