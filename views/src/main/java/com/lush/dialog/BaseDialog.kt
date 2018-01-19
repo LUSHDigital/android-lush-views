@@ -28,6 +28,8 @@ abstract class BaseDialog: DialogFragment(), View.OnKeyListener
 	init
 	{
 		retainInstance = true
+		// This exists to call the code in the setter for cancelable
+		setCancelable(isCancelable)
 	}
 
 	fun show(manager: FragmentManager?)
