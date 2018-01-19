@@ -7,6 +7,10 @@ import com.lush.view.R
 /**
  * Implementation of BaseDialog that exposes the ability to present a loading interface
  * inside a dialog to the user with possible finishing states of failure or success.
+ *
+ * It's the responsibility of the concrete implementation to call either taskComplete()
+ * or taskFailed() passing the error or success message for the lifecycle of this
+ * dialog to complete.
  */
 abstract class BaseStatusDialog: BaseDialog()
 {
