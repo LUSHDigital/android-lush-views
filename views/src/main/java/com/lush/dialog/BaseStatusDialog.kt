@@ -21,6 +21,15 @@ abstract class BaseStatusDialog: BaseDialog()
 	{
 		view?.findViewById<View>(R.id.close)?.setOnClickListener({ dismiss() })
 		showView(loading)
+		val loadingMessage = getLoadingMessage()
+		if (loadingMessage.isNotBlank())
+		{
+			view?.findViewById<TextView>(R.id.loading_text)?.text = loadingMessage
+		}
+		else
+		{
+			view?.findViewById<TextView>(R.id.loading_text)?.visibility = View.GONE
+		}
 		startTask()
 	}
 
@@ -61,4 +70,5 @@ abstract class BaseStatusDialog: BaseDialog()
 
 	abstract fun startTask()
 	abstract fun isStoppable(): Boolean
+	abstract fun getLoadingMessage(): String
 }
