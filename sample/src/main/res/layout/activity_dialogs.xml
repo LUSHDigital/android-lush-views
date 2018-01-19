@@ -18,6 +18,20 @@
 			android:text="Simple Message"
 			style="@style/LushButton.Black"/>
 
+		<Button
+			android:id="@+id/status_success"
+			android:layout_width="match_parent"
+			android:layout_margin="16dp"
+			android:text="Status dialog (Success)"
+			style="@style/LushButton.Black"/>
+
+		<Button
+			android:id="@+id/status_failure"
+			android:layout_width="match_parent"
+			android:layout_margin="16dp"
+			android:text="Status dialog (Failure)"
+			style="@style/LushButton.Black"/>
+
 	</LinearLayout>
 
 </ScrollView>
