@@ -54,7 +54,7 @@ abstract class BaseDialog: DialogFragment(), View.OnKeyListener
 		val closeBtn = view?.findViewById<ImageButton>(R.id.header_close)
 		if (isCancelable)
 		{
-			closeBtn?.setOnClickListener({ dismiss() })
+			closeBtn?.setOnClickListener { dismiss() }
 		}
 		else
 		{
