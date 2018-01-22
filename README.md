@@ -26,6 +26,17 @@ protected void attachBaseContext(Context newBase)
 
 and then have the Application singleton extend `LushApplication` (Or just copy the Calligraphy code out of it).
 
+## Dialogs
+
+This library contains `BaseDialog`; It's purpose is to provide a consistent look and feel to dialogs with a little extra functionality on top.
+To use this in a project, simply create an implementation of one of the following:
+
+- `BaseDialog`: Most flexible class. Should be used for the more complicated dialogs.
+- `BaseStatusDialog`: Used for presenting feedback to the user inside a dialog about a pending operation. Has a failed and successful finish state.
+- `BaseSimpleMessageDialog`: Used for just displaying a simple message to the user. The only args for this are a title and a message.
+
+To make a dialog not cancellable, simply override `isCancellable` and return false.
+
 ## Buttons
 Buttons come in 4 styles:
 
