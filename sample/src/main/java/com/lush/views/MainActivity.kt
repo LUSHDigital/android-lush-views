@@ -20,5 +20,6 @@ class MainActivity : BaseActivity() {
         youtube.setOnClickListener { startActivity<YoutubeSampleActivity>() }
         webviews.setOnClickListener { startActivity<WebViewSampleActivity>() }
         images.setOnClickListener { startActivity<ImageSampleActivity>() }
+        wizard.setOnClickListener { startActivity<WizardSampleActivity>() }
     }
 }
