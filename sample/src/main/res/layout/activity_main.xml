@@ -89,6 +89,13 @@
 			android:layout_margin="8dp"
 			android:text="Dialogs"/>
 
+		<Button
+			android:id="@+id/wizard"
+			style="@style/LushButton.Black"
+			android:layout_width="match_parent"
+			android:layout_margin="8dp"
+			android:text="Sample Wizard"/>
+
 	</LinearLayout>
 
 </ScrollView>

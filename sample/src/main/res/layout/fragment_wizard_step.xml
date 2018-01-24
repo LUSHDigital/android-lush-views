@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:gravity="center"
+	android:orientation="vertical">
+
+	<TextView
+		android:id="@+id/step_title"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="8dp"
+		android:textSize="36sp"
+		android:textAppearance="@style/Text.Black.HelveticaBold"
+		android:gravity="center"/>
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="8dp"
+		android:text="Some text here"
+		android:textAppearance="@style/Text.Black"
+		android:gravity="center"/>
+
+	<Button
+		android:id="@+id/button"
+		android:layout_width="256dp"
+		android:layout_margin="8dp"
+		android:text="Next"
+		style="@style/LushButton.Black"/>
+
+</LinearLayout>

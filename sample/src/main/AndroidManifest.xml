@@ -44,6 +44,14 @@
 				android:value="com.lush.views.MainActivity"/>
 		</activity>
 		<activity
+			android:name=".WizardSampleActivity"
+			android:label="Wizard Sample"
+			android:parentActivityName="com.lush.views.MainActivity">
+			<meta-data
+				android:name="android.support.PARENT_ACTIVITY"
+				android:value="com.lush.views.MainActivity"/>
+		</activity>
+		<activity
 			android:name=".SpinnerSampleActivity"
 			android:label="Spinners"
 			android:parentActivityName="com.lush.views.MainActivity">
