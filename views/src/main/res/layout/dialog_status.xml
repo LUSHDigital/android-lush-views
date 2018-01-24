@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+
+	<LinearLayout
+		android:id="@+id/loading"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="@dimen/dialog_margin"
+		android:gravity="center"
+		android:orientation="vertical">
+
+		<TextView
+			android:id="@+id/loading_text"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="8dp"
+			android:gravity="center"
+			android:textAppearance="@style/Text.Black"/>
+
+		<ProgressBar
+			android:layout_width="72dp"
+			android:layout_height="72dp"
+			android:layout_margin="8dp"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/finished"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="@dimen/dialog_margin"
+		android:orientation="vertical">
+
+		<TextView
+			android:id="@+id/text"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="8dp"
+			android:gravity="center"
+			android:textAppearance="@style/Text.Black"/>
+
+		<Button
+			android:id="@+id/close"
+			android:layout_width="match_parent"
+			android:layout_margin="8dp"
+			android:text="@string/close"
+			style="@style/LushButton.Black"/>
+
+	</LinearLayout>
+
+</FrameLayout>

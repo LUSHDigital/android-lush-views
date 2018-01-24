@@ -68,6 +68,14 @@
 				android:value="com.lush.views.MainActivity"/>
 		</activity>
 		<activity
+			android:name=".DialogSampleActivity"
+			android:label="Dialogs"
+			android:parentActivityName="com.lush.views.MainActivity">
+			<meta-data
+				android:name="android.support.PARENT_ACTIVITY"
+				android:value="com.lush.views.MainActivity"/>
+		</activity>
+		<activity
 			android:name=".FormSampleActivity"
 			android:label="Form Fields"
 			android:parentActivityName="com.lush.views.MainActivity">

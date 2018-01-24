@@ -1,4 +1,4 @@
-version = '1.27'
+version = '1.29'
 group = 'com.lush.library'
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
@@ -8,7 +8,7 @@ android {
 	compileSdkVersion 27
 	buildToolsVersion "26.0.2"
 	defaultConfig {
-		minSdkVersion 16
+		minSdkVersion 19
 		targetSdkVersion 27
 		versionCode 1
 		versionName version
