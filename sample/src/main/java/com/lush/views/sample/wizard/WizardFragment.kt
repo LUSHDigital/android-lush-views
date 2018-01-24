@@ -1,12 +1,12 @@
 package com.lush.views.sample.wizard
 
-import android.support.v4.app.Fragment
 import com.lush.wizard.BaseWizardFragment
+import com.lush.wizard.BaseWizardStepFragment
 import java.util.*
 
 class WizardFragment: BaseWizardFragment()
 {
-	override fun getSteps(): List<Fragment>
+	override fun getSteps(): List<BaseWizardStepFragment>
 	{
 		return Arrays.asList(
 				WizardStepOneFragment(),
