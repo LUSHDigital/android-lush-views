@@ -49,6 +49,11 @@
 		<item name="android:background">@drawable/state_button_black_primary</item>
 	</style>
 
+	<style name="LushButton.Green">
+		<item name="android:textColor">@android:color/white</item>
+		<item name="android:background">@drawable/state_button_green</item>
+	</style>
+
 	<style name="LushButton.White">
 		<item name="android:textColor">@drawable/state_button_text_black</item>
 		<item name="android:background">@drawable/state_button_white_primary</item>
