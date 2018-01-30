@@ -49,6 +49,11 @@
 				android:layout_margin="8dp"
 				android:text="Black Secondary"/>
 
+			<Button
+				style="@style/LushButton.Green"
+				android:layout_margin="8dp"
+				android:text="I am green here"/>
+
 		</LinearLayout>
 
 		<Button

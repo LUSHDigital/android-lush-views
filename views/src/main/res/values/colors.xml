@@ -2,9 +2,11 @@
 <resources>
 	<color name="red">#D0021B</color>
 	<color name="green">#00A44C</color>
+	<color name="green_disabled">#8000A44C</color>
 	<color name="near_black">#333333</color>
 	<color name="dark_grey">#8F8F8F</color>
 	<color name="light_grey">#EAEAEA</color>
+	<color name="background_grey">#F6F7FB</color>
 	<color name="grey">#CECECE</color>
 	<color name="btn_glass_inactive">#55999999</color>
 	<color name="btn_glass_normal">#44CCCCCC</color>
