@@ -79,4 +79,4 @@ class PersonViewHolder(view: View): BaseSelectableViewHolder<Person>(view)
 	}
 }
 
-data class Person(val name: String = "", val surname: String = "")
+data class Person(val name: String, val surname: String)
