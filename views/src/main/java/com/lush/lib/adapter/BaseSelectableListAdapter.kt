@@ -24,7 +24,7 @@ abstract class BaseSelectableListAdapter<T>(items: ArrayList<T> = arrayListOf(),
 		}
 	}
 
-	fun getSelected(): ArrayList<T> = selected
+	fun getSelected(): List<T> = selected
 
 	fun addSelected(item: T)
 	{
