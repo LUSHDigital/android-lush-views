@@ -54,7 +54,7 @@ class ListSampleActivity: BaseSampleActivity(), OnListItemClickListener<Person>
 	}
 }
 
-class PersonAdapter(items: ArrayList<Person> = arrayListOf(), listener: OnListItemClickListener<Person>? = null): BaseSelectableListAdapter<Person>(items, listener)
+class PersonAdapter(items: ArrayList<Person> = ArrayList(), listener: OnListItemClickListener<Person>? = null): BaseSelectableListAdapter<Person>(items, listener)
 {
 	override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): BaseViewHolder<Person>
 	{
