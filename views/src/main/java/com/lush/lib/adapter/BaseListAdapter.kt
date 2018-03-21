@@ -6,6 +6,13 @@ import com.lush.view.holder.BaseViewHolder
 
 abstract class BaseListAdapter<T>(val items: ArrayList<T> = arrayListOf(), val listener: OnListItemClickListener<T>? = null) : RecyclerView.Adapter<BaseViewHolder<T>>()
 {
+	init
+	{
+		val newItems = items.filter { it != null }
+		items.clear()
+		items.addAll(newItems)
+	}
+
 	fun setItems(newItems: List<T>)
 	{
 		items.clear()
