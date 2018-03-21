@@ -11,6 +11,8 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        javalist.setOnClickListener { startActivity<JavaListSampleActivity>() }
+        list.setOnClickListener { startActivity<ListSampleActivity>() }
         buttons.setOnClickListener { startActivity<ButtonsSampleActivity>() }
         text.setOnClickListener { startActivity<TextSampleActivity>() }
         quantity.setOnClickListener { startActivity<QuantitySampleActivity>() }
