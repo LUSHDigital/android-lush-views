@@ -20,6 +20,14 @@
 			</intent-filter>
 		</activity>
 		<activity
+			android:name=".ListSampleActivity"
+			android:label="Lists"
+			android:parentActivityName="com.lush.views.MainActivity">
+			<meta-data
+				android:name="android.support.PARENT_ACTIVITY"
+				android:value="com.lush.views.MainActivity"/>
+		</activity>
+		<activity
 			android:name=".ButtonsSampleActivity"
 			android:label="Buttons"
 			android:parentActivityName="com.lush.views.MainActivity">

@@ -20,6 +20,13 @@
 			android:text="Views"/>
 
 		<Button
+			android:id="@+id/list"
+			style="@style/LushButton.Black"
+			android:layout_width="match_parent"
+			android:layout_margin="8dp"
+			android:text="Lists"/>
+
+		<Button
 			android:id="@+id/buttons"
 			style="@style/LushButton.Black"
 			android:layout_width="match_parent"
