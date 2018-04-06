@@ -1,5 +1,6 @@
 package com.lush.views.sample.wizard
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -22,5 +23,5 @@ class WizardStepOneFragment: BaseWizardStepFragment()
 		button?.setOnClickListener { next() }
 	}
 
-	override fun getTitle(): String = "Step One"
+	override fun getTitle(context: Context?): String = "Step One"
 }

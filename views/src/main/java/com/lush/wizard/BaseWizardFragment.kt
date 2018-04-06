@@ -71,7 +71,7 @@ abstract class BaseWizardFragment: Fragment()
 	private fun updateSubtitle()
 	{
 		val fragment = steps[currentStep]
-		stepTitle?.text = (fragment as TitledPage).getTitle()
+		stepTitle?.text = (fragment as TitledPage).getTitle(context)
 	}
 
 	private fun updateFragment()
