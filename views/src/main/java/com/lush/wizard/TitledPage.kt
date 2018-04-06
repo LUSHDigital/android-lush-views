@@ -1,6 +1,8 @@
 package com.lush.wizard
 
+import android.content.Context
+
 interface TitledPage
 {
-	fun getTitle(): String
+	fun getTitle(context: Context?): String
 }
