@@ -1,4 +1,4 @@
-version = '1.37'
+version = '1.38'
 group = 'com.lush.library'
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
@@ -38,7 +38,7 @@ dependencies {
 	}
 
 	compile 'com.github.matt-allen:Android-Universal-Image-Loader:2.1.2', {
-		exclude group: 'com.android.support'
+		exclude group: ['com.android.support', 'com.google.code.gson']
 	}
 
 	compile 'com.yqritc:android-scalablevideoview:1.0.4', {
