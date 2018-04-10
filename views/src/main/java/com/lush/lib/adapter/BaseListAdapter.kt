@@ -4,7 +4,7 @@ import android.support.v7.widget.RecyclerView
 import com.lush.lib.listener.OnListItemClickListener
 import com.lush.view.holder.BaseViewHolder
 
-abstract class BaseListAdapter<T>(proposedItems: List<T> = ArrayList(), private val listener: OnListItemClickListener<T>? = null) : RecyclerView.Adapter<BaseViewHolder<T>>()
+abstract class BaseListAdapter<T>(proposedItems: List<T> = ArrayList(), protected val listener: OnListItemClickListener<T>? = null) : RecyclerView.Adapter<BaseViewHolder<T>>()
 {
 	private val items: ArrayList<T> = ArrayList(proposedItems.filter { it != null })
 
