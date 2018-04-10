@@ -20,6 +20,22 @@ abstract class BaseListAdapter<T>(proposedItems: List<T> = ArrayList(), protecte
 		return items.size
 	}
 
+	override fun onBindViewHolder(holder: BaseViewHolder<T>, position: Int)
+	{
+		val item = getItem(position)
+		holder.bind(item)
+		if (listener != null)
+		{
+			holder.setOnClickListener { v -> listener.onItemClick(item, v) }
+		}
+	}
+
+	override fun onViewRecycled(holder: BaseViewHolder<T>)
+	{
+		super.onViewRecycled(holder)
+		holder.recycle()
+	}
+
 	fun getItem(position: Int): T
 	{
 		return items[position]
@@ -64,15 +80,6 @@ abstract class BaseListAdapter<T>(proposedItems: List<T> = ArrayList(), protecte
 		notifyItemMoved(fromPosition, toPosition)
 	}
 
-	protected fun getPosition(item: T): Int
-	{
-		return if (items.size > 0)
-		{
-			items.indexOf(item)
-		}
-		else -1
-	}
-
 	fun setItemsWithAnimation(newItems: List<T>)
 	{
 		val itemsToSet = newItems.filter { it != null }
@@ -80,6 +87,15 @@ abstract class BaseListAdapter<T>(proposedItems: List<T> = ArrayList(), protecte
 		applyAndAnimateAdditions(itemsToSet)
 		applyAndAnimateMovedItems(itemsToSet)
 		notifyItemRangeChanged(0, itemsToSet.size)
+	}
+
+	protected fun getPosition(item: T): Int
+	{
+		return if (items.size > 0)
+		{
+			items.indexOf(item)
+		}
+		else -1
 	}
 
 	private fun applyAndAnimateRemovals(newItems: List<T>)
@@ -120,21 +136,5 @@ abstract class BaseListAdapter<T>(proposedItems: List<T> = ArrayList(), protecte
 				moveItem(fromPosition, toPosition)
 			}
 		}
-	}
-
-	override fun onBindViewHolder(holder: BaseViewHolder<T>, position: Int)
-	{
-		val item = getItem(position)
-		holder.bind(item)
-		if (listener != null)
-		{
-			holder.setOnClickListener { v -> listener.onItemClick(item, v) }
-		}
-	}
-
-	override fun onViewRecycled(holder: BaseViewHolder<T>)
-	{
-		super.onViewRecycled(holder)
-		holder.recycle()
 	}
 }
