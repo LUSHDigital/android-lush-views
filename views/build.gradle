@@ -1,4 +1,4 @@
-version = '1.36'
+version = '1.37'
 group = 'com.lush.library'
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'

@@ -10,7 +10,7 @@ abstract class BaseViewHolder<in T>(view: View?) : RecyclerView.ViewHolder(view)
 {
 	abstract fun bind(model: T)
 
-	fun setOnClickListener(listener: (View) -> Unit)
+	fun setOnClickListener(listener: View.OnClickListener)
 	{
 		itemView.setOnClickListener(listener)
 	}
@@ -19,5 +19,5 @@ abstract class BaseViewHolder<in T>(view: View?) : RecyclerView.ViewHolder(view)
 	 * Override this method to cancel any behaviour you don't want to continue after the view has been recycled
 	 * This is most likely async behaviour
 	 */
-	fun recycle() { }
+	open fun recycle() { }
 }

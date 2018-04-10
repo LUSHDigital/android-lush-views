@@ -1,19 +1,13 @@
 package com.lush.lib.adapter
 
 import android.support.v7.widget.RecyclerView
+import android.view.View
 import com.lush.lib.listener.OnListItemClickListener
 import com.lush.view.holder.BaseViewHolder
 
 abstract class BaseListAdapter<T>(proposedItems: List<T> = ArrayList(), protected val listener: OnListItemClickListener<T>? = null) : RecyclerView.Adapter<BaseViewHolder<T>>()
 {
 	private val items: ArrayList<T> = ArrayList(proposedItems.filter { it != null })
-
-	fun setItems(newItems: List<T>)
-	{
-		items.clear()
-		items.addAll(newItems.filter { it != null })
-		notifyDataSetChanged()
-	}
 
 	override fun getItemCount(): Int
 	{
@@ -26,7 +20,7 @@ abstract class BaseListAdapter<T>(proposedItems: List<T> = ArrayList(), protecte
 		holder.bind(item)
 		if (listener != null)
 		{
-			holder.setOnClickListener { v -> listener.onItemClick(item, v) }
+			holder.setOnClickListener(View.OnClickListener { listener.onItemClick(item, it) })
 		}
 	}
 
@@ -88,6 +82,15 @@ abstract class BaseListAdapter<T>(proposedItems: List<T> = ArrayList(), protecte
 		applyAndAnimateMovedItems(itemsToSet)
 		notifyItemRangeChanged(0, itemsToSet.size)
 	}
+
+	fun setItems(newItems: List<T>)
+	{
+		items.clear()
+		items.addAll(newItems.filter { it != null })
+		notifyDataSetChanged()
+	}
+
+	fun getItems(): List<T> = ArrayList(items)
 
 	protected fun getPosition(item: T): Int
 	{
