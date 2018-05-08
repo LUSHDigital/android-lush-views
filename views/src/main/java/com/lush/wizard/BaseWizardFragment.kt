@@ -86,7 +86,7 @@ abstract class BaseWizardFragment: Fragment()
 		}
 	}
 
-	private fun updateIndicator()
+	open fun updateIndicator()
 	{
 		val numberIndicators = steps.size
 		if (indicatorGroup?.childCount != numberIndicators)
@@ -119,6 +119,7 @@ abstract class BaseWizardFragment: Fragment()
 	}
 
 	fun cancelWizard() = activity?.onBackPressed()
+	fun getCurrentStep() = currentStep
 
 	abstract fun getSteps(): List<BaseWizardStepFragment>
 	abstract fun getTitle(): String
