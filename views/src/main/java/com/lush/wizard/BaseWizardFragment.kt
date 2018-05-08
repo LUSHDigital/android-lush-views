@@ -86,7 +86,7 @@ abstract class BaseWizardFragment: Fragment()
 		}
 	}
 
-    open fun updateIndicator()
+	open fun updateIndicator()
 	{
 		val numberIndicators = steps.size
 		if (indicatorGroup?.childCount != numberIndicators)
