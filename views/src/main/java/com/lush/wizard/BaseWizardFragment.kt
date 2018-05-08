@@ -119,6 +119,7 @@ abstract class BaseWizardFragment: Fragment()
 	}
 
 	fun cancelWizard() = activity?.onBackPressed()
+    fun getCurrentStep() = currentStep
 
 	abstract fun getSteps(): List<BaseWizardStepFragment>
 	abstract fun getTitle(): String
