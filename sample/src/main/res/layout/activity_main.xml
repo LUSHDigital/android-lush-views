@@ -34,6 +34,13 @@
 			android:text="Lists"/>
 
 		<Button
+			android:id="@+id/coloured_list"
+			android:layout_width="match_parent"
+			android:layout_margin="8dp"
+			android:text="Coloured List"
+			style="@style/LushButton.Black"/>
+
+		<Button
 			android:id="@+id/buttons"
 			style="@style/LushButton.Black"
 			android:layout_width="match_parent"
