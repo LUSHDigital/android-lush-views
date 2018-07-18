@@ -11,4 +11,5 @@
 	<color name="btn_glass_inactive">#55999999</color>
 	<color name="btn_glass_normal">#44CCCCCC</color>
 	<color name="btn_glass_selected">#88DDDDDD</color>
+	<color name="list_item_alternate">#FAFBFC</color>
 </resources>

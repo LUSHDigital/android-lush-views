@@ -54,28 +54,28 @@ class ListSampleActivity: BaseSampleActivity(), OnListItemClickListener<Person>
 	}
 }
 
-class PersonAdapter(items: ArrayList<Person> = ArrayList(), listener: OnListItemClickListener<Person>? = null): BaseSelectableListAdapter<Person>(items, listener)
+class PersonAdapter(items: ArrayList<Person> = ArrayList(), listener: OnListItemClickListener<Person>? = null): BaseSelectableListAdapter<Person>(items, listener, true)
 {
-	override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): BaseViewHolder<Person>
+	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<Person>
 	{
 		val view = LayoutInflater.from(parent?.context).inflate(R.layout.item_person, parent, false)
 		return PersonViewHolder(view)
 	}
-}
 
-class PersonViewHolder(view: View): BaseSelectableViewHolder<Person>(view)
-{
-	override fun bind(model: Person)
+	class PersonViewHolder(view: View) : BaseSelectableViewHolder<Person>(view)
 	{
-		itemView.person_name.text = "${model.name} ${model.surname}"
-	}
+		override fun bind(model: Person)
+		{
+			itemView.person_name.text = "${model.name} ${model.surname}"
+		}
 
-	override fun setSelected(selected: Boolean)
-	{
-		val backgroundColor = if (selected) Color.BLACK else Color.WHITE
-		val textColor = if (selected) Color.WHITE else Color.BLACK
-		itemView.setBackgroundColor(backgroundColor)
-		itemView.person_name.setTextColor(textColor)
+		override fun setSelected(selected: Boolean)
+		{
+			val backgroundColor = if (selected) Color.BLACK else Color.WHITE
+			val textColor = if (selected) Color.WHITE else Color.BLACK
+			itemView.setBackgroundColor(backgroundColor)
+			itemView.person_name.setTextColor(textColor)
+		}
 	}
 }
 
