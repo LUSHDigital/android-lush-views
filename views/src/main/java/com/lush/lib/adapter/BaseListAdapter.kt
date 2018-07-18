@@ -5,14 +5,15 @@ import android.view.View
 import com.lush.lib.listener.OnListItemClickListener
 import com.lush.view.holder.BaseViewHolder
 
-abstract class BaseListAdapter<T>(proposedItems: List<T> = ArrayList(), protected val listener: OnListItemClickListener<T>? = null) : RecyclerView.Adapter<BaseViewHolder<T>>()
+abstract class BaseListAdapter<T>(
+		proposedItems: List<T> = ArrayList(),
+		protected val listener: OnListItemClickListener<T>? = null,
+		private val colourAlternateItems: Boolean
+): RecyclerView.Adapter<BaseViewHolder<T>>()
 {
 	private val items: ArrayList<T> = ArrayList(proposedItems.filter { it != null })
 
-	override fun getItemCount(): Int
-	{
-		return items.size
-	}
+	constructor(proposedItems: List<T> = ArrayList(), listener: OnListItemClickListener<T>? = null): this(proposedItems, listener, false)
 
 	override fun onBindViewHolder(holder: BaseViewHolder<T>, position: Int)
 	{
@@ -22,6 +23,10 @@ abstract class BaseListAdapter<T>(proposedItems: List<T> = ArrayList(), protecte
 		{
 			holder.setOnClickListener(View.OnClickListener { listener.onItemClick(item, it) })
 		}
+		if (colourAlternateItems)
+		{
+			holder.setPositionInList(position)
+		}
 	}
 
 	override fun onViewRecycled(holder: BaseViewHolder<T>)
@@ -30,10 +35,7 @@ abstract class BaseListAdapter<T>(proposedItems: List<T> = ArrayList(), protecte
 		holder.recycle()
 	}
 
-	fun getItem(position: Int): T
-	{
-		return items[position]
-	}
+	override fun getItemCount(): Int = items.size
 
 	fun addItem(item: T)
 	{
@@ -91,6 +93,7 @@ abstract class BaseListAdapter<T>(proposedItems: List<T> = ArrayList(), protecte
 	}
 
 	fun getItems(): List<T> = ArrayList(items)
+	fun getItem(position: Int): T = items[position]
 
 	protected fun getPosition(item: T): Int
 	{
