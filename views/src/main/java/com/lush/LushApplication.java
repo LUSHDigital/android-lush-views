@@ -11,7 +11,9 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import io.github.inflationx.calligraphy3.CalligraphyConfig;
+import io.github.inflationx.calligraphy3.CalligraphyInterceptor;
+import io.github.inflationx.viewpump.ViewPump;
 
 /**
  * There's a certain amount of stuff that needs to happen to make the
@@ -41,11 +43,12 @@ public abstract class LushApplication extends Application
 		ImageLoader.getInstance().init(config);
 		ImageLoader.getInstance().registerSchemeHandler("cloudinary", new CloudinarySchemeHandler());
 
-		CalligraphyConfig calligraphyConfig = new CalligraphyConfig.Builder()
-				.setDefaultFontPath("fonts/HelveticaNeueLTPro-Roman.otf")
-				.setFontAttrId(R.attr.fontPath)
-				.build();
-
-		CalligraphyConfig.initDefault(calligraphyConfig);
+		ViewPump.init(ViewPump.builder()
+				.addInterceptor(new CalligraphyInterceptor(
+						new CalligraphyConfig.Builder()
+								.setDefaultFontPath("fonts/HelveticaNeueLTPro-Roman.otf")
+								.setFontAttrId(R.attr.fontPath)
+								.build()))
+				.build());
 	}
 }
